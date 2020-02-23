@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="718.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RechangeRechercherController">
+    <stylesheets>
+        <URL value="@ajouterproduit.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tf_nom" layoutX="148.0" layoutY="115.0" />
+      <TextField fx:id="tf_marque" layoutX="148.0" layoutY="185.0" />
+      <TextField fx:id="tf_prix" layoutX="148.0" layoutY="273.0" />
+      <Label layoutX="43.0" layoutY="119.0" text="Nom Produit" />
+      <Label layoutX="42.0" layoutY="189.0" text="Marque Produit" />
+      <Label layoutX="40.0" layoutY="277.0" text="Prix Produit" />
+      <Label layoutX="314.0" layoutY="280.0" text="DT" />
+      <Label layoutX="40.0" layoutY="346.0" text="Photo Produit" />
+      <Button fx:id="tf_photo" layoutX="148.0" layoutY="342.0" mnemonicParsing="false" onAction="#modifier_photo" prefHeight="25.0" prefWidth="149.0" text="attachez photo" />
+      <Button fx:id="tf_modifier" layoutX="620.0" layoutY="102.0" mnemonicParsing="false" onAction="#ModifierRechange" text="Modifier" />
+      <Button fx:id="tf_partager" layoutX="620.0" layoutY="160.0" mnemonicParsing="false" onAction="#partager" text="Partager" />
+      <ImageView fx:id="tf_image_view" fitHeight="176.0" fitWidth="200.0" layoutX="329.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="577.0" layoutY="24.0" orientation="VERTICAL" prefHeight="528.0" prefWidth="15.0" />
+      <Button fx:id="retour" layoutX="639.0" layoutY="510.0" mnemonicParsing="false" onAction="#RetourAfficherVelo" text="Retour" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    
+    
+    .button {
+  -fx-transition-duration: 0.4s;
+}
+
+.button:hover {
+  -fx-background-color: #4CAF50; /* Green */
+  -fx-color: white;
+}
+
+
+
+}
