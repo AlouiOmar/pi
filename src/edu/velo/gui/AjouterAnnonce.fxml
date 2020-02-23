@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.velo.gui.AjouterAnnonceController">
+    <children>
+      <BorderPane prefHeight="750.0" prefWidth="1000.0">
+         <top>
+            <MenuBar prefHeight="53.0" prefWidth="867.0" style="-fx-background-color: Blue;" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="logout" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="dc" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Deconnexion" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="acceuil" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="aa" mnemonicParsing="false" style="-fx-background-color: blue;" text="Acceuil" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="plan" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="pp" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Produit" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="annonce" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="ddd" mnemonicParsing="false" onAction="#afficherAnnonces" style="-fx-background-color: Blue;" text="Annonce" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="produit" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="cc1" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Évenement" textFill="#ffffffbf" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="Reservation" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="rr" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Reservation" textFill="#ffffffbf" />
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="Reservation1" mnemonicParsing="false">
+                     <graphic>
+                        <JFXHamburger fx:id="hamburger" translateX="425.0">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </JFXHamburger>
+                     </graphic>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="569.0" prefWidth="906.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="ltitre" layoutX="236.0" layoutY="50.0" text="Titre" />
+                  <Label fx:id="couleur1" layoutX="232.0" layoutY="353.0" text="Couleur" />
+                  <Label fx:id="lprix" layoutX="235.0" layoutY="264.0" text="Prix  " />
+                  <Label fx:id="ldate" layoutX="236.0" layoutY="232.0" text="Date" />
+                  <Label fx:id="ldescription" layoutX="233.0" layoutY="460.0" prefHeight="17.0" prefWidth="61.0" text="Description" />
+                  <Label fx:id="lty" layoutX="233.0" layoutY="187.0" prefHeight="17.0" prefWidth="50.0" text="Type" />
+                  <Label fx:id="lcat" layoutX="232.0" layoutY="96.0" text="Categorie" />
+                  <JFXButton fx:id="ajoutiererd" buttonType="RAISED" layoutX="303.0" layoutY="612.0" onAction="#AjouterAnnonce" prefHeight="31.0" prefWidth="91.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Ajouter" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_add_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXTextField fx:id="titre" layoutX="336.0" layoutY="46.0" promptText="Titre" />
+                  <JFXTextField fx:id="couleur" layoutX="336.0" layoutY="349.0" promptText="Couleur" />
+                  <JFXDatePicker fx:id="date" defaultColor="#080cf5" layoutX="332.0" layoutY="228.0" promptText="Date" />
+                  <JFXTextArea fx:id="description" layoutX="340.0" layoutY="460.0" prefHeight="96.0" prefWidth="234.0" promptText="Description" />
+                  <JFXButton fx:id="ajoutiererd1" buttonType="RAISED" layoutX="468.0" layoutY="612.0" onAction="#annuler" prefHeight="31.0" prefWidth="88.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Annuler" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_cancel_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="up" buttonType="RAISED" layoutX="336.0" layoutY="398.0" onAction="#importBtn" prefHeight="31.0" prefWidth="91.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Upload" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_cloud_upload_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="lup" layoutX="235.0" layoutY="405.0" text="Image" />
+                  <ImageView fx:id="imaged" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+                  <JFXComboBox fx:id="cat" layoutX="336.0" layoutY="92.0" prefHeight="25.0" prefWidth="162.0" promptText="Catégorie" />
+                  <JFXComboBox fx:id="ty" layoutX="336.0" layoutY="183.0" prefHeight="25.0" prefWidth="162.0" promptText="Type" />
+                  <Label fx:id="lgv" layoutX="235.0" layoutY="137.0" text="Gouvernorat" />
+                  <JFXComboBox fx:id="gv" layoutX="336.0" layoutY="134.0" prefHeight="25.0" prefWidth="162.0" promptText="Gouvernorat" />
+                  <Label fx:id="tv" layoutX="233.0" layoutY="309.0" prefHeight="17.0" prefWidth="66.0" text="Type vélo :" />
+                  <JFXComboBox fx:id="ty1" layoutX="336.0" layoutY="305.0" prefHeight="25.0" prefWidth="162.0" promptText="Type" />
+                  <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" prefHeight="697.0" prefWidth="200.0">
+                     <children>
+                        <VBox fx:id="box" prefHeight="500.0" prefWidth="171.0" style="-fx-spacing: 10; -fx-padding: 30; -fx-min-width: 200;">
+                           <children>
+                              <JFXComboBox fx:id="cb" minWidth="150.0" onAction="#clicki" prefHeight="25.0" prefWidth="162.0" promptText="Catégorie" />
+                              <JFXTextField fx:id="tf" minWidth="150.0" prefHeight="25.0" prefWidth="163.0" promptText="Rechercher..." />
+                              <JFXButton buttonType="RAISED" minWidth="150.0" onAction="#recherche" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text=" Rechercher" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_search_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" minWidth="150.0" onAction="#mesannonces" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Mes Annonces" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_list_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="ajouterannonce" buttonType="RAISED" minWidth="150.0" onAction="#ajouter" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Ajouter Annonce" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_add_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" minWidth="150.0" onAction="#trieParDate" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Trier par date" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_date_range_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" minWidth="150.0" onAction="#trieParPrix" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Trier par prix" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_attach_money_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btSignal1" buttonType="RAISED" minWidth="150.0" onAction="#listeAnnonceSignalee" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Annonces signalées" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_flag_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btAdmin" buttonType="RAISED" minWidth="150.0" onAction="#afficherAdminAnnonces" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Toutes les Annonces" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_list_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btStat" buttonType="RAISED" minWidth="150.0" onAction="#afficherStatistique" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Statistiques" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/baseline_pie_chart_white_18dp.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </JFXDrawer>
+                  <JFXTextField fx:id="prix" layoutX="336.0" layoutY="269.0" promptText="Prix" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children> 
+</AnchorPane>
