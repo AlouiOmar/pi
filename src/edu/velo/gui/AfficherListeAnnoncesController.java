@@ -160,7 +160,7 @@ public class AfficherListeAnnoncesController implements Initializable {
         des.setLayoutX(150);
         des.setLayoutY(150); 
         des.setVisible(false);
-        if(Vars.current_user.getIdu()==a.getIdu() || Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getId_user()==a.getIdu() || Vars.current_user.getRole().equals("administrateur")){
         des.setVisible(a.isActive());}
         des.setStyle("-fx-background-color: #2196F3;-fx-text-fill: #ffffff; -fx-font-size: 14px;    -fx-cursor: hand;");
 
@@ -186,7 +186,7 @@ public class AfficherListeAnnoncesController implements Initializable {
         act.setLayoutX(150);
         act.setLayoutY(150); 
         act.setVisible(false);
-        if(Vars.current_user.getIdu()==a.getIdu() || Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getId_user()==a.getIdu() || Vars.current_user.getRole().equals("administrateur")){
         act.setVisible(!a.isActive());}
         act.setStyle("-fx-background-color: #2196F3;-fx-text-fill: #ffffff; -fx-font-size: 14px;    -fx-cursor: hand;");
 
@@ -306,12 +306,12 @@ public class AfficherListeAnnoncesController implements Initializable {
      @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Vars.current_user=u1;
+//        Vars.current_user=u1;
         
         btAdmin.setVisible(false);
         btSignal.setVisible(false);
         btStat.setVisible(false);
-        if(Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getRole().equals("administrateur")){
          btAdmin.setVisible(true);
          btSignal.setVisible(true);   
          btStat.setVisible(true);   

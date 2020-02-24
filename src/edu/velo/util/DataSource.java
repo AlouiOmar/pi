@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class DataSource {
 
-    String url = "jdbc:mysql://localhost/velo";
+    String url = "jdbc:mysql://localhost/pi_dev";
     String login = "root";
     String pwd = "";
     Connection cnx;

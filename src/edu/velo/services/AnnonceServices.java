@@ -11,6 +11,7 @@ import edu.velo.entities.Stat;
 import edu.velo.entities.User;
 import edu.velo.util.DataSource;
 import edu.velo.interfaces.AnnonceServicesInterface;
+import edu.velo.userentites.Utilisateur;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -444,12 +445,12 @@ public class AnnonceServices implements AnnonceServicesInterface{
         return maliste;
     }
    
-     public List<Annonce> afficherUserAnnonces(User u) {
+     public List<Annonce> afficherUserAnnonces(Utilisateur u) {
         List<Annonce> maliste = new ArrayList<>();
        // UserServices uu=new UserServices();
        
         try {
-            String req="SELECT * FROM Annonce where idu='"+u.getIdu()+"'";
+            String req="SELECT * FROM Annonce where idu='"+u.getId_user()+"'";
             Statement s=DataSource.getInstance().getCnx().createStatement();
             ResultSet rs=s.executeQuery(req);
             while(rs.next())

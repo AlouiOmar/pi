@@ -7,6 +7,7 @@ package edu.velo.util;
 
 import edu.velo.entities.*;
 import java.util.List;
+import edu.velo.userentites.*;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Vars {
     
     public static int current_admin=1;
     public static int current_choice=0;
-    public static User current_user;
+    public static Utilisateur current_user;
     public static List<Annonce> current_list;
     public static Annonce current_annonce;
     public static String current_type;

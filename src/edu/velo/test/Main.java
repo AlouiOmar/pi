@@ -55,7 +55,7 @@ public class Main extends Application {
 ////Vars.current_admin=1;
 
        //root = FXMLLoader.load(getClass().getResource("/edu/bonplan/gui/AfficherReservation.fxml"));
-            root = FXMLLoader.load(getClass().getResource("/edu/velo/gui/AfficherListeAnnonces.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/edu/velo/gui/Login.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

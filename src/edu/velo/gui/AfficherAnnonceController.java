@@ -12,12 +12,15 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import edu.velo.entities.Annonce;
 import edu.velo.services.AnnonceServices;
+import edu.velo.userentites.Utilisateur;
+import edu.velo.userservices.ServiceUser;
 import edu.velo.util.Vars;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -114,15 +117,21 @@ public class AfficherAnnonceController implements Initializable {
          private String tel;
          private String sc;
          private List<String> causeList = new ArrayList<String>();
-
+         private Utilisateur u;
+         private int telephone;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         a=as.getAnnonce(Vars.current_annonce.getIda());
-        
-//        UtilisateurService us=new UtilisateurService();
-//        Utilisateur u=us.getUser(Vars.current_annonce.getIdu());
-         tel="+216 22 424 717";
+                     ServiceUser us = new ServiceUser();
+
+             try {
+                  u=us.getById(Vars.current_annonce.getIdu());
+             } catch (SQLException ex) {
+                 Logger.getLogger(AfficherAnnonceController.class.getName()).log(Level.SEVERE, null, ex);
+             }
+             
+         tel=(String) Integer.toString(u.getTelephone());
          labelTel.setText(tel);
         labelTel.setVisible(false);
         labelCause.setVisible(false);
@@ -159,7 +168,7 @@ public class AfficherAnnonceController implements Initializable {
 
        //
             
-            if(Vars.current_user.getRole().equals("admin") && !sc.equals("")){
+            if(Vars.current_user.getRole().equals("administrateur") && !sc.equals("")){
                 labelCause.setVisible(true);
                 cause.setVisible(true);
             }
@@ -173,12 +182,12 @@ public class AfficherAnnonceController implements Initializable {
                 
             }
             btSignal.setDisable(true);
-            if(Vars.current_user.getRole().equals("user") || Vars.current_user.getRole().equals("admin")){
+            if(Vars.current_user.getRole().equals("utilisateur") || Vars.current_user.getRole().equals("administrateur")){
                 btSignal.setDisable(false);
             }
             btModif.setVisible(false);
             btSupp.setVisible(false);
-            if(Vars.current_user.getIdu()==a.getIdu() || Vars.current_user.getRole().equals("admin")){
+            if(Vars.current_user.getId_user()==a.getIdu() || Vars.current_user.getRole().equals("administrateur")){
                 btModif.setVisible(true);
                 btSupp.setVisible(true);
                 
@@ -188,7 +197,7 @@ public class AfficherAnnonceController implements Initializable {
         btAdmin.setVisible(false);
         btSignal1.setVisible(false);
         btStat.setVisible(false);
-        if(Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getRole().equals("administrateur")){
          btAdmin.setVisible(true);
          btSignal1.setVisible(true);   
          btStat.setVisible(true);   

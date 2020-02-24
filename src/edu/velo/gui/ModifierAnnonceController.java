@@ -146,7 +146,7 @@ public class ModifierAnnonceController implements Initializable {
         btAdmin.setVisible(false);
         btSignal.setVisible(false);
         btStat.setVisible(false);
-        if(Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getRole().equals("administrateur")){
          btAdmin.setVisible(true);
          btSignal.setVisible(true);   
          btStat.setVisible(true);   

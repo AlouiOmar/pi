@@ -161,7 +161,7 @@ public class AjouterAnnonceController implements Initializable {
         btAdmin.setVisible(false);
         btSignal1.setVisible(false);
         btStat.setVisible(false);
-        if(Vars.current_user.getRole().equals("admin")){
+        if(Vars.current_user.getRole().equals("administrateur")){
          btAdmin.setVisible(true);
          btSignal1.setVisible(true);   
          btStat.setVisible(true);   
@@ -312,12 +312,12 @@ public class AjouterAnnonceController implements Initializable {
 
         if(cat.getValue().equals("Vélo"))
                     {
-                    as.AjouterVeloAnnonce(a,Vars.current_user.getIdu());
+                    as.AjouterVeloAnnonce(a,Vars.current_user.getId_user());
 
                     }
         if(cat.getValue().equals("Pièce de rechange") || cat.getValue().equals("Accessoire"))
                     {
-                                as.AjouterAnnonce(a,Vars.current_user.getIdu());
+                                as.AjouterAnnonce(a,Vars.current_user.getId_user());
 
                     }
         String txtDate=new SimpleDateFormat("dd/MM/yyyy", Locale.ROOT).format(new Date());

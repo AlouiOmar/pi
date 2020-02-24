@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.velo.gui.ListeUtilisateursController">
+   <children>
+      <TableView fx:id="tableview" layoutY="72.0" prefHeight="308.0" prefWidth="811.0">
+        <columns>
+          <TableColumn fx:id="tcnom" onEditCommit="#Change_Nom" prefWidth="75.0" text="nom" />
+          <TableColumn fx:id="tcprenom" onEditCommit="#Change_Prenom" prefWidth="121.0" text="prenom" />
+            <TableColumn fx:id="tcemail" onEditCommit="#Change_Email" prefWidth="160.0" text="email" />
+            <TableColumn fx:id="tcage" onEditCommit="#Change_Age" prefWidth="57.0" text="age" />
+            <TableColumn fx:id="tctelephone" onEditCommit="#Change_Telephone" prefWidth="139.0" text="telephone" />
+            <TableColumn fx:id="tcrole" onEditCommit="#Change_Role" prefWidth="143.0" text="role" />
+            <TableColumn fx:id="tcpwd" onEditCommit="#Change_Password" prefWidth="114.0" text="password" />
+        </columns>
+      </TableView>
+      <Label fx:id="labelliste" layoutX="22.0" layoutY="25.0" text="La liste des utilisateur">
+         <font>
+            <Font name="Calibri" size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajouter" layoutX="28.0" layoutY="402.0" mnemonicParsing="false" onAction="#Ajouter_Utilisateur" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #170239;" text="ajouter" textFill="#fff9f9">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimer" layoutX="191.0" layoutY="402.0" mnemonicParsing="false" onAction="#deleteUtilisateur" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #170239;" text="supprimer" textFill="#fff9f9">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="chercher" layoutX="502.0" layoutY="402.0" prefHeight="34.0" prefWidth="189.0" promptText="chercher utilisateur">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnchercher" layoutX="343.0" layoutY="402.0" mnemonicParsing="false" onAction="#Recherche_Utilisateur" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #170239;" text="chercher" textFill="#fff9f9">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
