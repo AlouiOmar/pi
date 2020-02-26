@@ -5,6 +5,11 @@
  */
 package edu.velo.gui;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
@@ -16,9 +21,15 @@ import edu.velo.userentites.Utilisateur;
 import edu.velo.userservices.ServiceUser;
 import edu.velo.util.Vars;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -37,16 +48,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+//import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -113,7 +127,7 @@ public class AfficherAnnonceController implements Initializable {
          private VBox box;
          @FXML
          private JFXTextField tf;
-         private Image img;
+        // private Image img;
          private String tel;
          private String sc;
          private List<String> causeList = new ArrayList<String>();
@@ -522,4 +536,94 @@ public class AfficherAnnonceController implements Initializable {
         labelTel.setVisible(true);
         
     }
+         private void sendSms() {
+    
+    try {
+			// Construct data
+			String apiKey = "apikey=" + "sn9Jwsj8TA4-XMeIr6IOoML0nBybSfBGR6dq5llDIk";
+			String message = "&message=" + "votre paiment par score a été effectuer avec succeés";
+			String sender = "&sender=" + "NobleV";
+			String numbers = "&numbers=" + Vars.current_user.getTelephone();
+			
+			// Send data
+			HttpURLConnection conn = (HttpURLConnection) new URL("https://api.txtlocal.com/send/?").openConnection();
+			String data = apiKey + numbers + message + sender;
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
+			conn.getOutputStream().write(data.getBytes("UTF-8"));
+			final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			final StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = rd.readLine()) != null) {
+				//stringBuffer.append(line);
+                                JOptionPane.showMessageDialog(null, "message"+line);
+			}
+			rd.close();
+			
+			//return stringBuffer.toString();
+		} catch (Exception e) {
+			//System.out.println("Error SMS "+e);
+			//return "Error "+e;
+                        JOptionPane.showMessageDialog(null, e);
+                }
+    
+    }
+    public void saveFile(Annonce a, File file) throws SQLException {
+        try {
+//            BufferedWriter outWriter = new BufferedWriter(new FileWriter(file+".pdf"));
+                                 ServiceUser us = new ServiceUser();
+                                  Utilisateur u=new Utilisateur();
+                                  u=us.getById(a.getIdu());
+//               outWriter.write("cher Mr/Mme: "+ u.getNom()+" "+u.getPrenom());
+//               outWriter.write(" vous avez payer "+a.getPrix()+" place dans le deal "+a.getTitre()+" à "+" points la place ce qui donne ");
+//               outWriter.write(" points pour la totalité de la réservation a l'aide de votre score veiller présentez cet facture pour pouvoir benificierde votre deal");
+//                outWriter.newLine();
+            
+           
+            try {
+                 Document document=new Document();
+                PdfWriter.getInstance(document,new FileOutputStream(file+".pdf"));
+                                    document.open();
+
+                Paragraph para=new Paragraph("cher Mr/Mme: "+ u.getNom()+" "+u.getPrenom());
+            Paragraph para1=new Paragraph(" vous avez payer "+a.getPrix()+" place dans le deal "+a.getTitre()+" à "+" points la place ce qui donne ");
+            document.add(para);
+            document.add(Image.getInstance("C:\\codenameone\\velo11\\src\\edu\\velo\\uploads\\"+a.getPhoto()));
+            document.close();
+            } catch (DocumentException ex) {
+                Logger.getLogger(AfficherAnnonceController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+           // outWriter.close();
+        } catch (IOException e) {
+            
+        }
+    }
+    
+       @FXML
+    private void saveFichier(ActionEvent event) {
+            
+            
+                    Stage secondaryStage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Enregistrer facture de payement par score");
+        FileChooser.ExtensionFilter extFilterPDF = new FileChooser.ExtensionFilter("Pdf files (*.pdf)", "*.pdf");
+        
+       
+        
+        
+        File file = fileChooser.showSaveDialog(secondaryStage);
+        
+            if(file != null) {
+                        try {
+                            saveFile(Vars.current_annonce, file);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(AfficherAnnonceController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+         }
+           
+            
+           
+        }
 }
