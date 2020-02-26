@@ -662,4 +662,5 @@ public class AnnonceServices implements AnnonceServicesInterface{
         return maliste;
     }
      
+    
 }
