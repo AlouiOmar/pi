@@ -11,6 +11,7 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import edu.velo.entities.Stat;
+import edu.velo.gui.StatController;
 import edu.velo.services.AnnonceServices;
 import edu.velo.util.Vars;
 import java.io.IOException;
@@ -32,11 +33,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+//import java.awt.Color;
+import java.awt.EventQueue;
 
 /**
  * FXML Controller class
@@ -100,6 +112,8 @@ public class StatistiqueAnnonceController implements Initializable {
     private JFXButton btSignal;
     @FXML
     private JFXButton btStat;
+      @FXML
+    private JFXButton btStat1;
     @FXML
     private JFXButton btAdmin;
     /**
@@ -182,6 +196,25 @@ public class StatistiqueAnnonceController implements Initializable {
          nre.setData(chartnre);
          nre.setLabelLineLength(10);
          nre.setLegendSide(Side.LEFT);
+         
+           final Label caption = new Label("");
+        caption.setTextFill(Color.DARKORANGE);
+        caption.setStyle("-fx-font: 24 arial;");
+
+        for (final PieChart.Data data : nre.getData()) {
+            data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+                e -> {
+                    double total = 0;
+                    for (PieChart.Data d : nre.getData()) {
+                        total += d.getPieValue();
+                    }
+                    caption.setTranslateX(e.getSceneX());
+                    caption.setTranslateY(e.getSceneY());
+                    String text = String.format("%.1f%%", 100*data.getPieValue()/total) ;
+                    caption.setText(text);
+                 }
+                );
+        }
         
         
     }    
@@ -371,5 +404,60 @@ public class StatistiqueAnnonceController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AfficherListeAnnoncesController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+            @FXML
+    private void afficherProduit(ActionEvent event) {
+        try {
+            
+            Parent p6=FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
+            
+            
+            Stage stage=new Stage();
+            Scene scene = new Scene(p6);
+            
+            stage.setTitle("Produit");
+            stage.setScene(scene);
+            stage.show();
+            ((Node) event.getSource()).getScene().getWindow().hide();
+        } catch (IOException ex) {
+            Logger.getLogger(AfficherListeAnnoncesController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+                @FXML
+    private void afficherStat1(ActionEvent event) {
+
+        StatController s = new StatController();
+                    Stage stage=new Stage();
+
+            s.start(stage);
+    }
+    
+    
+                 @FXML
+    private void afficherStat2(ActionEvent event) {
+
+        StatOne s = new StatOne ();
+                    Stage stage=new Stage();
+
+            s.start(stage);
+    }
+                 @FXML
+    private void afficherStat3(ActionEvent event) {
+
+        StatTwo s = new StatTwo ();
+                    Stage stage=new Stage();
+
+            s.start(stage);
+    }
+                 @FXML
+    private void afficherStat4(ActionEvent event) {
+
+        StatThree s = new StatThree ();
+                    Stage stage=new Stage();
+
+            s.start(stage);
     }
 }

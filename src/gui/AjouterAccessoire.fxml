@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="718.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjouterAccessoireController">
+    <stylesheets>
+        <URL value="@ajouterproduit.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tf_nom" layoutX="148.0" layoutY="115.0" />
+      <TextField fx:id="tf_marque" layoutX="148.0" layoutY="252.0" />
+      <TextField fx:id="tf_couleur" layoutX="148.0" layoutY="311.0" />
+      <TextField fx:id="tf_prix" layoutX="148.0" layoutY="373.0" />
+      <Label layoutX="42.0" layoutY="116.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Nom Produit" />
+      <Label layoutX="42.0" layoutY="184.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Type Produit" />
+      <Label layoutX="42.0" layoutY="256.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Marque Produit" />
+      <Label layoutX="42.0" layoutY="315.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Couleur Produit" />
+      <Label layoutX="45.0" layoutY="377.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Prix Produit" />
+      <Label layoutX="311.0" layoutY="377.0" text="DT" />
+      <Label layoutX="47.0" layoutY="501.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Photo Produit" />
+      <Button fx:id="tf_photo" layoutX="144.0" layoutY="497.0" mnemonicParsing="false" onAction="#attacher_photo" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: efebd8; -fx-font-weight: bold; -fx-font-style: oblique; -fx-background-color: #959595;" text="Attachez photo" />
+      <Button fx:id="tf_ajouter" layoutX="610.0" layoutY="102.0" mnemonicParsing="false" onAction="#ConfirmerAjout" prefHeight="44.0" prefWidth="99.0" style="-fx-background-color: #77b5fe; -fx-border-radius: 20px; -fx-background-radius: 50px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 15;" text="    Ajouter" />
+      <Button fx:id="tf_nettoyer" layoutX="610.0" layoutY="183.0" mnemonicParsing="false" onAction="#clear_fields" prefHeight="38.0" prefWidth="99.0" style="-fx-background-color: #900603; -fx-border-radius: 20px; -fx-background-radius: 50px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 13;" text="    Nettoyer" />
+      <TextField fx:id="tf_type" layoutX="148.0" layoutY="180.0" />
+      <DatePicker fx:id="tf_date" layoutX="144.0" layoutY="437.0" style="-fx-background-color: #959595;" />
+      <Label layoutX="48.0" layoutY="441.0" style="-fx-font-weight: bold; -fx-text-fill: #959595;" text="Date Ajout" />
+      <ImageView fx:id="add" fitHeight="66.0" fitWidth="68.0" layoutX="574.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_add.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="netoyer" fitHeight="66.0" fitWidth="66.0" layoutX="572.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_clear.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="attache" fitHeight="36.0" fitWidth="31.0" layoutX="144.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_attach.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

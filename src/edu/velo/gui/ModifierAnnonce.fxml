@@ -21,58 +21,6 @@
 <AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.velo.gui.ModifierAnnonceController">
     <children>
       <BorderPane prefHeight="750.0" prefWidth="1000.0">
-         <top>
-            <MenuBar prefHeight="53.0" prefWidth="867.0" style="-fx-background-color: Blue;" BorderPane.alignment="CENTER">
-               <menus>
-                  <Menu fx:id="logout" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="dc" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Deconnexion" textFill="WHITE">
-                           <graphic>
-                              <ImageView fitHeight="18.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/baseline_person_white_18dp.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></Button>
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="acceuil" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="aa" mnemonicParsing="false" style="-fx-background-color: blue;" text="Acceuil" textFill="WHITE" />
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="plan" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="pp" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Produit" textFill="WHITE" />
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="annonce" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="ddd" mnemonicParsing="false" onAction="#afficherAnnonces" style="-fx-background-color: Blue;" text="Annonce" textFill="WHITE" />
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="produit" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="cc1" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Évenement" textFill="#ffffffbf" />
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="Reservation" mnemonicParsing="false">
-                     <graphic>
-                        <Button fx:id="rr" mnemonicParsing="false" style="-fx-background-color: Blue;" text="Reservation" textFill="#ffffffbf" />
-                     </graphic>
-                  </Menu>
-                  <Menu fx:id="Reservation1" mnemonicParsing="false">
-                     <graphic>
-                        <JFXHamburger fx:id="hamburger" translateX="400.0">
-                           <padding>
-                              <Insets top="5.0" />
-                           </padding>
-                        </JFXHamburger>
-                     </graphic>
-                  </Menu>
-               </menus>
-            </MenuBar>
-         </top>
          <center>
             <AnchorPane prefHeight="569.0" prefWidth="906.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
@@ -203,9 +151,98 @@
                         </VBox>
                      </children>
                   </JFXDrawer>
+                  <JFXHamburger fx:id="hamburger" layoutX="956.0" layoutY="2.0">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </JFXHamburger>
                </children>
             </AnchorPane>
          </center>
+         <top>
+            <MenuBar prefHeight="39.0" prefWidth="755.0" style="-fx-background-color: #353f4b;" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="acceuil1" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="aa1" mnemonicParsing="false" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="75.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="plan1" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="pp1" mnemonicParsing="false" prefHeight="89.0" prefWidth="110.0" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="78.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/produit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="annonce1" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="ddd1" mnemonicParsing="false" onAction="#afficherAnnonces" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="83.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/annonce.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="produit1" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="cc11" mnemonicParsing="false" prefHeight="118.0" prefWidth="136.0" style="-fx-background-color: #353f4b;" textFill="#ffffffbf">
+                           <graphic>
+                              <ImageView fitHeight="79.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/location.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="Reservation2" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="rr1" mnemonicParsing="false" prefHeight="92.0" prefWidth="102.0" style="-fx-background-color: #353f4b;" textFill="#ffffffbf">
+                           <graphic>
+                              <ImageView fitHeight="84.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/event.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="logout1" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="dc1" mnemonicParsing="false" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="82.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/circuit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
       </BorderPane>
    </children> 
 </AnchorPane>

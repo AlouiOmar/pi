@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GestionProduit2Controller">
+    <stylesheets>
+        <URL value="@ajouterproduit.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="ajouter" layoutX="103.0" layoutY="216.0" mnemonicParsing="false" onAction="#AjouerAction" prefHeight="57.0" prefWidth="185.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px; -fx-font-size: 27; -fx-background-color: B0F2B6; -fx-background-color: #77b5fe; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique;" stylesheets="@../css/button.css" text=" Ajouter" />
+      <ImageView id="add_img" fx:id="add_img" fitHeight="100.0" fitWidth="98.0" layoutX="44.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_add.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="rechercher" layoutX="426.0" layoutY="216.0" mnemonicParsing="false" onAction="#RechercherAction" prefHeight="57.0" prefWidth="224.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px; -fx-font-size: 27; -fx-background-color: B0F2B6; -fx-text-fill: white; -fx-font-style: oblique; -fx-background-color: #77b5fd; -fx-font-weight: bold;" stylesheets="@../css/button.css" text="      Rechercher" />
+      <ImageView fx:id="search_img" fitHeight="90.0" fitWidth="99.0" layoutX="395.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_search.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="-4.0" prefHeight="90.0" prefWidth="659.0" style="-fx-background-color: #353f4b;">
+         <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#homeAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#produitAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fx:id="produitAction" fitHeight="58.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/87504337_605722316824945_4529400861717168128_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#annonceAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fx:id="annonceAction" fitHeight="71.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/87208734_641939416618340_1144650965257814016_n%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#locationAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/87632000_1295646443963815_1979469148765290496_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#evennementAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fitHeight="57.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/87291281_826057411244041_731247542540435456_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Button mnemonicParsing="false" onAction="#circuitAction" style="-fx-background-color: #353f4b;">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/87980068_538449883450869_2478571952315301888_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </graphic>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

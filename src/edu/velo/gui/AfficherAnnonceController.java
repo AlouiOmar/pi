@@ -138,7 +138,8 @@ public class AfficherAnnonceController implements Initializable {
         // TODO
         a=as.getAnnonce(Vars.current_annonce.getIda());
                      ServiceUser us = new ServiceUser();
-
+                     System.out.println("current user"+Vars.current_user.getId_user());
+                     int idUser=Vars.current_user.getId_user();
              try {
                   u=us.getById(Vars.current_annonce.getIdu());
              } catch (SQLException ex) {
@@ -201,7 +202,10 @@ public class AfficherAnnonceController implements Initializable {
             }
             btModif.setVisible(false);
             btSupp.setVisible(false);
-            if(Vars.current_user.getId_user()==a.getIdu() || Vars.current_user.getRole().equals("administrateur")){
+            if(idUser==a.getIdu() || Vars.current_user.getRole().equals("administrateur")){
+                System.out.println("currentuser"+Vars.current_user.getId_user());
+                System.out.println("id annonce"+a.getIdu());
+                
                 btModif.setVisible(true);
                 btSupp.setVisible(true);
                 
@@ -536,39 +540,39 @@ public class AfficherAnnonceController implements Initializable {
         labelTel.setVisible(true);
         
     }
-         private void sendSms() {
-    
-    try {
-			// Construct data
-			String apiKey = "apikey=" + "sn9Jwsj8TA4-XMeIr6IOoML0nBybSfBGR6dq5llDIk";
-			String message = "&message=" + "votre paiment par score a été effectuer avec succeés";
-			String sender = "&sender=" + "NobleV";
-			String numbers = "&numbers=" + Vars.current_user.getTelephone();
-			
-			// Send data
-			HttpURLConnection conn = (HttpURLConnection) new URL("https://api.txtlocal.com/send/?").openConnection();
-			String data = apiKey + numbers + message + sender;
-			conn.setDoOutput(true);
-			conn.setRequestMethod("POST");
-			conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
-			conn.getOutputStream().write(data.getBytes("UTF-8"));
-			final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			final StringBuffer stringBuffer = new StringBuffer();
-			String line;
-			while ((line = rd.readLine()) != null) {
-				//stringBuffer.append(line);
-                                JOptionPane.showMessageDialog(null, "message"+line);
-			}
-			rd.close();
-			
-			//return stringBuffer.toString();
-		} catch (Exception e) {
-			//System.out.println("Error SMS "+e);
-			//return "Error "+e;
-                        JOptionPane.showMessageDialog(null, e);
-                }
-    
-    }
+//         private void sendSms() {
+//    
+//    try {
+//			// Construct data
+//			String apiKey = "apikey=" + "sn9Jwsj8TA4-XMeIr6IOoML0nBybSfBGR6dq5llDIk";
+//			String message = "&message=" + "votre paiment par score a été effectuer avec succeés";
+//			String sender = "&sender=" + "NobleV";
+//			String numbers = "&numbers=" + Vars.current_user.getTelephone();
+//			
+//			// Send data
+//			HttpURLConnection conn = (HttpURLConnection) new URL("https://api.txtlocal.com/send/?").openConnection();
+//			String data = apiKey + numbers + message + sender;
+//			conn.setDoOutput(true);
+//			conn.setRequestMethod("POST");
+//			conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
+//			conn.getOutputStream().write(data.getBytes("UTF-8"));
+//			final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//			final StringBuffer stringBuffer = new StringBuffer();
+//			String line;
+//			while ((line = rd.readLine()) != null) {
+//				//stringBuffer.append(line);
+//                                JOptionPane.showMessageDialog(null, "message"+line);
+//			}
+//			rd.close();
+//			
+//			//return stringBuffer.toString();
+//		} catch (Exception e) {
+//			//System.out.println("Error SMS "+e);
+//			//return "Error "+e;
+//                        JOptionPane.showMessageDialog(null, e);
+//                }
+//    
+//    }
     public void saveFile(Annonce a, File file) throws SQLException {
         try {
 //            BufferedWriter outWriter = new BufferedWriter(new FileWriter(file+".pdf"));
@@ -587,8 +591,9 @@ public class AfficherAnnonceController implements Initializable {
                                     document.open();
 
                 Paragraph para=new Paragraph("cher Mr/Mme: "+ u.getNom()+" "+u.getPrenom());
-            Paragraph para1=new Paragraph(" vous avez payer "+a.getPrix()+" place dans le deal "+a.getTitre()+" à "+" points la place ce qui donne ");
+            Paragraph para1=new Paragraph(" le prix est de "+a.getPrix()+" de l'annonce "+a.getTitre()+" de type "+a.getType()+" elle est publiée le "+a.getDatep());
             document.add(para);
+            document.add(para1);
             document.add(Image.getInstance("C:\\codenameone\\velo11\\src\\edu\\velo\\uploads\\"+a.getPhoto()));
             document.close();
             } catch (DocumentException ex) {

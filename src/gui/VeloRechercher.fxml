@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="718.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VeloRechercherController">
+    <stylesheets>
+        <URL value="@ajouterproduit.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane fx:id="ancho_ID" layoutX="14.0" layoutY="40.0" prefHeight="406.0" prefWidth="559.0">
+         <children>
+            <Label layoutX="20.0" layoutY="55.0" style="-fx-text-fill: #959595;" text="Nom Produit" />
+            <TextField fx:id="tf_prix" layoutX="131.0" layoutY="325.0" />
+            <TextField fx:id="tf_marque" layoutX="131.0" layoutY="111.0" />
+            <TextField fx:id="tf_cat" layoutX="131.0" layoutY="182.0" />
+            <TextField fx:id="tf_nom" layoutX="131.0" layoutY="51.0" />
+            <TextField fx:id="tf_couleur" layoutX="131.0" layoutY="249.0" />
+            <Label layoutX="20.0" layoutY="115.0" style="-fx-text-fill: #959595;" text="Marque Produit" />
+            <Label layoutX="22.0" layoutY="186.0" style="-fx-text-fill: #959595;" text="Catégorie Produit" />
+            <Label layoutX="20.0" layoutY="253.0" style="-fx-text-fill: #959595;" text="Couleur Produit" />
+            <Label layoutX="27.0" layoutY="329.0" prefHeight="17.0" prefWidth="69.0" style="-fx-text-fill: #959595;" text="Prix Produit" />
+            <Label layoutX="300.0" layoutY="329.0" style="-fx-text-fill: #959595;" text="DT" />
+            <ImageView fx:id="tf_image_view" fitHeight="206.0" fitWidth="205.0" layoutX="332.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+      <Button fx:id="tf_photo" layoutX="148.0" layoutY="455.0" mnemonicParsing="false" onAction="#modifier_photo" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #959595; -fx-text-fill: bold;" text="attachez photo" />
+      <Button fx:id="tf_modifier" layoutX="620.0" layoutY="102.0" mnemonicParsing="false" onAction="#ModifierVelo" prefHeight="30.0" prefWidth="84.0" style="-fx-background-color: blue; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold;" text="   Modifier" />
+      <Button fx:id="tf_PDf" layoutX="615.0" layoutY="182.0" mnemonicParsing="false" onAction="#PDFAction" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: red; -fx-background-radius: 50px; -fx-text-fill: white;" text="PDF" />
+      <Separator layoutX="569.0" layoutY="22.0" orientation="VERTICAL" prefHeight="528.0" prefWidth="15.0" />
+      <Button fx:id="retour" layoutX="631.0" layoutY="510.0" mnemonicParsing="false" onAction="#RetourAfficherVelo" prefHeight="30.0" prefWidth="74.0" style="-fx-background-radius: 50px; -fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" styleClass="rad" text="     Retour" />
+      <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="591.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon-modify.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="48.0" layoutX="604.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img_idd" fitHeight="38.0" fitWidth="40.0" layoutX="148.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_attach.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="40.0" layoutY="459.0" style="-fx-text-fill: #959595;" text="Photo Produit" />
+      <ImageView fx:id="id_pdf" fitHeight="47.0" fitWidth="48.0" layoutX="596.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pdf.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

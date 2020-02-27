@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="725.0" prefWidth="1053.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherController">
+   <children>
+      <Button fx:id="back_gestion_" layoutX="923.0" layoutY="656.0" mnemonicParsing="false" onAction="#back_gestion_action" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 60px; -fx-text-fill: white; -fx-background-size: 10; -fx-font-size: 20; -fx-font-weight: bold;" text="    Retour">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Label fx:id="titre_ID" layoutX="467.0" layoutY="39.0" style="-fx-text-overrun: arial; -fx-text-fill: #959595; -fx-font-style: oblique;" text="Afficher Produit">
+         <font>
+            <Font size="71.0" />
+         </font>
+      </Label>
+      <Button fx:id="bntAfficherVelo" layoutX="71.0" layoutY="216.0" mnemonicParsing="false" onAction="#bnt_Afficher_Velo_Action" prefHeight="80.0" prefWidth="255.0" style="-fx-background-color: #959595; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold; -fx-blend-mode: ok; -fx-font-style: oblique; -fx-font-size: 40;" text="Vélo">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAfficherAccessoire" layoutX="69.0" layoutY="331.0" mnemonicParsing="false" onAction="#btn_Afficher_Accessoire_Action" prefHeight="77.0" prefWidth="257.0" style="-fx-background-color: #959595; -fx-background-radius: 60px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique; -fx-blend-mode: ok;" text="Accessoire">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAfficherRechange" layoutX="68.0" layoutY="428.0" mnemonicParsing="false" onAction="#btn_Afficher_Rechange_Action" prefHeight="76.0" prefWidth="258.0" style="-fx-background-color: #959595; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique; -fx-blend-mode: ok;" text="Pièce de rechange">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Separator fx:id="separateur" layoutX="351.0" layoutY="75.0" opacity="0.62" orientation="VERTICAL" prefHeight="582.0" prefWidth="22.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <ImageView fx:id="img_back" fitHeight="76.0" fitWidth="71.0" layoutX="888.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon_back.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="mainPane" layoutX="386.0" layoutY="131.0" prefHeight="434.0" prefWidth="600.0" />
+   </children>
+</AnchorPane>
