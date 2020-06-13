@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a4a1fdb-0718-4ecd-99d9-73dbb074d0c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/velo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/calendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmladdlocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmllistlocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmllistreservation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmllocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmlreserver.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/CSS/fxmlupdatelocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Entite/Location.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Entite/Reservation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLAddLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLDocument.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLHome.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLListLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLListReservation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLReserver.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/FXMLUpdateLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GUI/calendar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Interfaces/IServiceLocation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Interfaces/IServiceReservation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Services/ServiceLocation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Services/ServiceReservation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/utils/MyConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLAddLocationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLDocumentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLHomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLListLocationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLListReservationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLLocationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLReserverController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/FXMLUpdateLocationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/velo/Velo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/NotificationAPI (2).jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/NotificationAPI.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/activation-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/commons-codec-1.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/commons-collections4-4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/commons-lang3-3.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/controlsfx-11.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/fontawesomefx-8.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/ical4j-3.0.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/ikonli-core-11.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/ikonli-fontawesome-pack-11.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/ikonli-javafx-11.3.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/javafx-base-13.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/javafx-controls-13.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/javafx-graphics-13.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/javax.mail-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/mysql-connector-java-5.1.23-bin.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/lib/view-11.8.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/velo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/velo.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/velo.jnlp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/dtjava.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/get_java.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/get_javafx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/javafx-chrome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/javafx-loading-100x100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/javafx-loading-25x25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/upgrade_java.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/web-files/upgrade_javafx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/configs/Run_as_WebStart.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/configs/Run_in_Browser.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/jfx-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/configs/Run_as_WebStart.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/configs/Run_in_Browser.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/retriever/172.16.1.1_8002/index.php.zone_students_redirurl_http_/javafx.com/javafx/11.0.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/retriever/catalog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/calendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmladdlocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmllistlocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmllistreservation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmllocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmlreserver.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CSS/fxmlupdatelocation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entite/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entite/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLAddLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLDocument.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLHome.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLListLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLListReservation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLReserver.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/FXMLUpdateLocation.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/calendar.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/IServiceLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/IServiceReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/ServiceLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/ServiceReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/MyConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLAddLocationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLDocumentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLHomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLListLocationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLListReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLLocationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLReserverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/FXMLUpdateLocationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/velo/Velo.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-77" />
+    <option name="y" value="59" />
+    <option name="width" value="780" />
+    <option name="height" value="602" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/wamp64/www/FreshSymfony" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a4a1fdb-0718-4ecd-99d9-73dbb074d0c1" name="Default Changelist" comment="" />
+      <created>1582742328881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582742328881</updated>
+      <workItem from="1582742330064" duration="285000" />
+      <workItem from="1583395918282" duration="958000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1243000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1452345" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
