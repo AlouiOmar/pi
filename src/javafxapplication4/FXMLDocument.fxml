@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="632.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication4.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="206.0" layoutY="186.0" onAction="#add" text="ADD" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="longitude" layoutX="69.0" layoutY="137.0" />
+      <TextField fx:id="lattitude" layoutX="69.0" layoutY="95.0" />
+      <Label layoutX="12.0" layoutY="56.0" prefHeight="17.0" prefWidth="49.0" text="Name" />
+      <Label layoutX="8.0" layoutY="99.0" prefHeight="17.0" prefWidth="57.0" text="Lattitude" />
+      <Label layoutX="8.0" layoutY="141.0" prefHeight="17.0" prefWidth="57.0" text="Longitude" />
+      <TextField fx:id="name" layoutX="69.0" layoutY="52.0" />
+      <Text layoutX="170.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Station" wrappingWidth="95.13671875" />
+      <Line endX="100.0" layoutX="224.0" layoutY="231.0" startX="-100.0" />
+      <Button fx:id="idAfficher" layoutX="196.0" layoutY="239.0" onAction="#idAfficherAction" text="afficher" />
+      <TableView fx:id="table" layoutY="273.0" prefHeight="200.0" prefWidth="554.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="91.0" text="id" />
+          <TableColumn fx:id="nameCol" prefWidth="102.0" text="name" />
+            <TableColumn fx:id="latCol" prefWidth="108.0" text="lattitude" />
+            <TableColumn fx:id="lonCol" prefWidth="128.0" text="longitude" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

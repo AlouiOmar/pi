@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="velo.FXMLHomeController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="10.0" prefHeight="500.0" prefWidth="703.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutY="-10.0" opacity="0.5" prefHeight="104.0" prefWidth="703.0" style="-fx-background-color: #008080;" AnchorPane.bottomAnchor="410.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="labelRentMenu" alignment="TOP_CENTER" layoutX="274.0" layoutY="27.0" text="Rent Menu " textAlignment="CENTER" textFill="#ee941a">
+                     <font>
+                        <Font name="Cambria Italic" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-54.0" layoutY="88.0" prefHeight="403.0" prefWidth="183.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="88.0">
+               <children>
+                  <Button fx:id="Add_Rent" layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#Add_Location" prefHeight="29.0" prefWidth="112.0" text="Add Rent" AnchorPane.bottomAnchor="203.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="168.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Rent_list" accessibleRole="IMAGE_VIEW" layoutX="14.0" layoutY="112.0" mnemonicParsing="false" onAction="#ListLocation" prefHeight="29.0" prefWidth="112.0" text="Rent List" AnchorPane.bottomAnchor="259.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="112.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="search" layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="29.0" prefWidth="112.0" text="Search" AnchorPane.leftAnchor="14.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Rent" layoutX="14.0" layoutY="278.0" mnemonicParsing="false" onAction="#rerserver" prefHeight="29.0" prefWidth="112.0" text="Rent" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="278.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reservation" layoutX="9.0" layoutY="225.0" mnemonicParsing="false" onAction="#list_reservation" text="Reservation list">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="44.0" layoutY="331.0" mnemonicParsing="false" onAction="#afficherAnnonces" text="Retour" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="AnchroPane" layoutX="165.0" layoutY="128.0" prefHeight="306.0" prefWidth="440.0" style="-fx-background-color: #D5D8DC;" AnchorPane.rightAnchor="10.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="557.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.velo.gui.FXMLInscriptionController">
+   <children>
+      <Label layoutX="25.0" layoutY="120.0" text="Name">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="164.0" text="Family Name">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="210.0" text="Email">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="334.0" text="Age">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="374.0" text="Telephone">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="247.0" text="Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nom" layoutX="232.0" layoutY="132.0" />
+      <TextField fx:id="prenom" layoutX="232.0" layoutY="176.0" />
+      <TextField fx:id="email" layoutX="232.0" layoutY="221.0" />
+      <TextField fx:id="age" layoutX="232.0" layoutY="341.0" />
+      <TextField fx:id="telephone" layoutX="231.0" layoutY="380.0" />
+      <Button fx:id="btinscription" layoutX="126.0" layoutY="509.0" mnemonicParsing="false" onAction="#inscription" opacity="0.8" prefHeight="30.0" prefWidth="149.0" style="-fx-background-color: #008080;" text="Sign In" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="password1" layoutX="232.0" layoutY="259.0" />
+      <Label layoutX="25.0" layoutY="295.0" text="Confim Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password2" layoutX="232.0" layoutY="300.0" />
+      <Label fx:id="role" layoutX="26.0" layoutY="455.0" text="Role">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choix" layoutX="232.0" layoutY="455.0" prefWidth="150.0" />
+      <Pane opacity="0.8" prefHeight="99.0" prefWidth="471.0" style="-fx-background-color: #008080;">
+         <children>
+            <Label layoutX="181.0" layoutY="30.0" style="colo: #008080;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="picture" layoutX="26.0" layoutY="418.0" text="Picture">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnpicture" layoutX="232.0" layoutY="418.0" mnemonicParsing="false" onAction="#bt_photo" prefHeight="25.0" prefWidth="150.0" text="Upload Picture" />
+   </children>
+</AnchorPane>

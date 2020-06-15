@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.velo.gui.AfficherListeAnnoncesController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="750.0" prefWidth="1155.0">
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="xx">
+               <children>
+                  <JFXButton fx:id="ajouterannonce" buttonType="RAISED" layoutX="9.0" layoutY="246.0" onAction="#ajouter" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Ajouter Annonce" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_add_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXComboBox fx:id="cb" layoutX="13.0" layoutY="69.0" onAction="#clicki" prefHeight="25.0" prefWidth="162.0" promptText="Catégorie" />
+                  <JFXTextField fx:id="tf" layoutX="13.0" layoutY="106.0" prefHeight="25.0" prefWidth="163.0" promptText="Rechercher..." />
+                  <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="197.0" onAction="#mesannonces" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Mes Annonces" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_list_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="151.0" onAction="#recherche" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text=" Rechercher" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_search_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="9.0" layoutY="291.0" onAction="#trieParDate" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Trier par date" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_date_range_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="8.0" layoutY="333.0" onAction="#trieParPrix" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Trier par prix" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_attach_money_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btSignal" buttonType="RAISED" layoutX="8.0" layoutY="377.0" onAction="#listeAnnonceSignalee" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Annonces signalées" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_flag_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btAdmin" buttonType="RAISED" layoutX="8.0" layoutY="417.0" onAction="#afficherAdminAnnonces" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Toutes les Annonces" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_list_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btStat" buttonType="RAISED" layoutX="8.0" layoutY="458.0" onAction="#afficherStatistique" prefHeight="32.0" prefWidth="166.0" style="-fx-background-color: #2196F3;" text="Statistiques" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/baseline_pie_chart_white_18dp.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <JFXListView fx:id="gr" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <MenuBar prefHeight="39.0" prefWidth="755.0" style="-fx-background-color: #353f4b;" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="acceuil" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="aa" mnemonicParsing="false" onAction="#afficherAnnonces" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="75.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="plan" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="pp" mnemonicParsing="false" onAction="#afficherProd" prefHeight="89.0" prefWidth="110.0" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="78.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/produit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="annonce" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="ddd" mnemonicParsing="false" onAction="#afficherAnnonces" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="83.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/annonce.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="produit" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="cc1" mnemonicParsing="false" onAction="#afficherLocation" prefHeight="118.0" prefWidth="136.0" style="-fx-background-color: #353f4b;" textFill="#ffffffbf">
+                           <graphic>
+                              <ImageView fitHeight="79.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/location.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="Reservation" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="rr" mnemonicParsing="false" onAction="#afficherevent" prefHeight="92.0" prefWidth="102.0" style="-fx-background-color: #353f4b;" textFill="#ffffffbf">
+                           <graphic>
+                              <ImageView fitHeight="84.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/event.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu fx:id="logout" mnemonicParsing="false">
+                     <graphic>
+                        <Button fx:id="dc" mnemonicParsing="false" onAction="#affichercircuit" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="82.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/circuit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     
+                     </graphic>
+                     
+                  </Menu>
+                  <Menu fx:id="logout1" mnemonicParsing="false">
+                     <graphic>
+                        <Button mnemonicParsing="false" onAction="#affiche" style="-fx-background-color: #353f4b;" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="82.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../pi_javafx/icons/utilisateur.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </graphic>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Circle fx:id="cir" fill="DODGERBLUE" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
+                     </graphic>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <ComboBox fx:id="cbx" onAction="#acc" prefHeight="43.0" prefWidth="132.0" />
+                     </graphic>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>  
+</AnchorPane>
