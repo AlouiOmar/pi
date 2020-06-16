@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Entite.Location;
+import entities.Location;
 import java.sql.SQLException;
 import java.util.List;
 

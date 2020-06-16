@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Entite.Reservation;
+import entities.Reservation;
 import java.sql.SQLException;
 import java.util.List;
 
