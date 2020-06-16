@@ -89,8 +89,6 @@ public class EvenementController implements Initializable {
     private TextField tfSearch;
     @FXML
      private ChoiceBox<String> cbSearch;
-    @FXML
-    private Button btnHome;
     /**
      * Initializes the controller class.
      */
@@ -173,19 +171,8 @@ cbSearch.getItems().addAll("Titre", "Date", "Region","Circuit");
         }
         
     }    
-    @FXML
-    private void HomeAction(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader
-                        (getClass()
-                         .getResource("/eventsa/Home.fxml"));
-        try {
-            Parent root = loader.load();
-                            btnHome.getScene().setRoot(root);
-
-        } catch (IOException ex) {
-            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
+    
         public void add(ActionEvent event) throws Exception {
 
         FXMLLoader loader = new FXMLLoader
@@ -223,8 +210,7 @@ if(e==null){
 
             alert.showAndWait();
      
-        }
-else {
+        }else {
         FXMLLoader loader = new FXMLLoader
                         (getClass()
                          .getResource("/eventsa/ModifierEvenement.fxml"));
@@ -394,51 +380,7 @@ if(e==null){
         } 
 
 }
-@FXML
-        private void AnnulerParticipation(ActionEvent event) throws SQLException {
-        
-        
-         Event e=tvEvent.getSelectionModel().getSelectedItem();
-        
-        if(e==null){
-        
-           System.out.println("Aucun événement séléctionné");
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Erreur");
-            alert.setHeaderText(null);
-            alert.setContentText("Aucun événement séléctionné");
 
-            alert.showAndWait();
-     
-        }else {
-        
-        EventServices es=new EventServices();
-        
-         try {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Annuler participation");
-                alert.setHeaderText(null);
-                alert.setContentText("Annuler la participation a l'événement " + e.getTitre()+"?");
-                Optional<ButtonType> action = alert.showAndWait();
-                if (action.get() == ButtonType.OK) {
-                    // System.out.println("sup1");
-                    es.annulerParticipation(e.getTitre());
-                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                    alert1.setTitle("Succés!");
-                    alert1.setHeaderText(null);
-                    alert1.setContentText("Participation annulée!");
-
-                    alert1.showAndWait();
-                }
-            } catch (Exception ex) {
-            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-         
-        }
-        
-         
-        }
         }
 
         

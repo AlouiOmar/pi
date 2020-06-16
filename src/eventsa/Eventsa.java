@@ -19,7 +19,7 @@ public class Eventsa extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/eventsa/Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/eventsa/Evenement.fxml"));
         
         Scene scene = new Scene(root);
         
