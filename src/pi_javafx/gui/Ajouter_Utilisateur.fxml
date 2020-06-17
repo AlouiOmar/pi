@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="648.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi_javafx.Controller.Ajouter_UtilisateurController">
+   <children>
+      <Label layoutX="77.0" layoutY="164.0" text="Name">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="165.0" text="Family Name">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="242.0" text="Email">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="470.0" layoutY="255.0" text="Age">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="405.0" text="Telephone">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="328.0" text="Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nom" layoutX="209.0" layoutY="165.0" />
+      <TextField fx:id="prenom" layoutX="605.0" layoutY="168.0" />
+      <TextField fx:id="email" layoutX="210.0" layoutY="248.0" />
+      <TextField fx:id="age" layoutX="606.0" layoutY="255.0" />
+      <TextField fx:id="telephone" layoutX="203.0" layoutY="405.0" />
+      <PasswordField fx:id="password1" layoutX="209.0" layoutY="327.0" />
+      <Label layoutX="422.0" layoutY="330.0" text="Confim Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password2" layoutX="607.0" layoutY="330.0" />
+      <Label fx:id="picture" layoutX="448.0" layoutY="413.0" text="Picture">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnpicture" layoutX="608.0" layoutY="411.0" mnemonicParsing="false" onAction="#bt_photo" prefHeight="25.0" prefWidth="149.0" style="-fx-background-radius: 15px;" text="Upload Picture" />
+      <Label fx:id="role" layoutX="307.0" layoutY="473.0" text="Role">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choix" layoutX="445.0" layoutY="477.0" prefWidth="150.0" />
+      <Button fx:id="btinscription" layoutX="329.0" layoutY="575.0" mnemonicParsing="false" onAction="#inscription" opacity="0.8" prefHeight="56.0" prefWidth="277.0" style="-fx-background-color: #008080;" text="ajouter utilisateur" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Pane layoutX="-1.0" prefHeight="96.0" prefWidth="970.0" style="-fx-background-color: #353f4b;">
+         <children>
+            <ImageView fx:id="img1" fitHeight="86.0" fitWidth="114.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img2" fitHeight="91.0" fitWidth="114.0" layoutX="87.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/produit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img3" fitHeight="78.0" fitWidth="100.0" layoutX="193.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/annonce.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img4" fitHeight="78.0" fitWidth="98.0" layoutX="288.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/location.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img5" fitHeight="78.0" fitWidth="94.0" layoutX="394.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/evenement.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img6" fitHeight="83.0" fitWidth="92.0" layoutX="504.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/circuit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img7" fitHeight="102.0" fitWidth="86.0" layoutX="585.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/utilisateur.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="cir" fill="DODGERBLUE" layoutX="777.0" layoutY="49.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
+            <ComboBox fx:id="cbx" layoutX="823.0" layoutY="26.0" prefHeight="43.0" prefWidth="139.0" />
+            <Button fx:id="affiche" layoutX="601.0" layoutY="15.0" mnemonicParsing="false" onAction="#affiche" opacity="0.0" prefHeight="60.0" prefWidth="70.0" text="Button" />
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" prefHeight="106.0" prefWidth="1124.0" style="-fx-background-color: #353f4b;">
+         <children>
+            <ImageView fx:id="img11" fitHeight="86.0" fitWidth="114.0" layoutX="4.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img21" fitHeight="91.0" fitWidth="114.0" layoutX="87.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/produit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img31" fitHeight="78.0" fitWidth="100.0" layoutX="193.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/annonce.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img41" fitHeight="78.0" fitWidth="98.0" layoutX="288.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/location.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img51" fitHeight="78.0" fitWidth="94.0" layoutX="394.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/evenement.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img61" fitHeight="83.0" fitWidth="92.0" layoutX="504.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/circuit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img71" fitHeight="102.0" fitWidth="86.0" layoutX="585.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/utilisateur.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="cir1" fill="DODGERBLUE" layoutX="851.0" layoutY="49.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
+            <ComboBox fx:id="cbx1" layoutX="917.0" layoutY="26.0" onAction="#acc" prefHeight="43.0" prefWidth="172.0" />
+            <Button fx:id="affiche1" layoutX="601.0" layoutY="15.0" mnemonicParsing="false" onAction="#affiche" opacity="0.0" prefHeight="60.0" prefWidth="70.0" text="Button" />
+            <Button fx:id="affichepost" layoutX="683.0" layoutY="26.0" mnemonicParsing="false" onAction="#affichepost" opacity="0.21" prefHeight="48.0" prefWidth="108.0" />
+         </children>
+      </Pane>
+      <ImageView fx:id="img8" fitHeight="60.0" fitWidth="107.0" layoutX="685.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/unnamed.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
