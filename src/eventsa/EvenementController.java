@@ -11,6 +11,7 @@ import evenement.Event;
 import evenement.EventServices;
 import evenement.Participation;
 import evenement.User;
+import evenement.Vars;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -54,9 +55,9 @@ public class EvenementController implements Initializable {
     @FXML
     private AnchorPane weather;
     @FXML
-    private TableView<Participation> tvParticipants;
+    private TableView<User> tvParticipants;
     @FXML
-    private TableColumn<Participation, String> cParticipants;
+    private TableColumn<User, String> cParticipants;
     @FXML
     private Label LabEvent;
     @FXML
@@ -211,6 +212,7 @@ if(e==null){
             alert.showAndWait();
      
         }else {
+            if (Vars.current_user.getId_U() == e.getCreator()){
         FXMLLoader loader = new FXMLLoader
                         (getClass()
                          .getResource("/eventsa/ModifierEvenement.fxml"));
@@ -223,14 +225,18 @@ if(e==null){
         stageAff.setScene(scene);
         stageAff.show();
         ((Node) (event.getSource())).getScene().getWindow().hide();
-//        try {
-//            Parent root = loader.load();
-//                            upEvent.getScene().setRoot(root);
-//
-//        } catch (IOException ex) {
-//            Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-}
+            }
+            else{
+                System.out.println("no droit");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Vous n'avez pas le droit de modifier cet evenement");
+
+            alert.showAndWait();
+            }
+
+        }
 
         }
          void refresh() throws SQLException {
@@ -270,7 +276,7 @@ if(e==null){
             alert.showAndWait();
      
         }else {
-        
+                if (Vars.current_user.getId_U() == e.getCreator()){
         EventServices es=new EventServices();
         String nom_P=e.getTitre();
         
@@ -293,7 +299,16 @@ if(e==null){
             } catch (Exception ex) {
             Logger.getLogger(EvenementController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+                }
+                else{
+                    System.out.println("no droit");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Vous n'avez pas le droit de supprimer cet evenement");
+
+            alert.showAndWait();
+                }
          loadData();
          refresh();
         }
@@ -355,14 +370,15 @@ if(e==null){
         }else {
                 EventServices es = new EventServices();
         
-        List<Participation> lp = new ArrayList<>();
+        List<User> lp = new ArrayList<>();
         
         
         try {
-            lp = (ArrayList<Participation>) es.afficherParticipation(e.getTitre());
+            System.out.println(e.getId_E());
+            lp = (ArrayList<User>) es.afficherParticipation(e.getId_E());
 
 
-            ObservableList<Participation> data = FXCollections.observableArrayList(lp);
+            ObservableList<User> data = FXCollections.observableArrayList(lp);
 //                    FilteredList<Participation> flp = new FilteredList(data, p -> true);//Pass the data to a filtered list
 
             cParticipants.setCellValueFactory(new PropertyValueFactory<>("nom"));

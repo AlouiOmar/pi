@@ -36,5 +36,7 @@
       <Button layoutX="684.0" layoutY="26.0" mnemonicParsing="false" opacity="0.0" prefHeight="47.0" prefWidth="52.0" text="Button" />
       <Button layoutX="834.0" layoutY="20.0" mnemonicParsing="false" opacity="0.0" prefHeight="47.0" prefWidth="52.0" text="Button" />
       <Button layoutX="987.0" layoutY="21.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="52.0" text="Button" />
+      <TextField fx:id="tfNbplacesE" layoutX="939.0" layoutY="266.0" />
+      <Label layoutX="899.0" layoutY="270.0" text="places:" />
     </children>
 </AnchorPane>

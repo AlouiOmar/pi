@@ -17,6 +17,8 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,6 +48,8 @@ public class CreerEvenementController implements Initializable {
      TextField tfTitreE;
     @FXML
      TextField tfDescriptionE;
+    @FXML
+     TextField tfNbplacesE;
     @FXML
      Label title;
     @FXML
@@ -106,12 +110,22 @@ public class CreerEvenementController implements Initializable {
         String date_E=dpDateE.getEditor().getText();
         String titre = tfTitreE.getText ();
          String Description = tfDescriptionE.getText ();
+         tfNbplacesE.textProperty().addListener(new ChangeListener<String>() {
          
+             public void changed(ObservableValue<? extends String> observable, String oldValue, 
+             String newValue) {
+              if (!newValue.matches("\\d*")) {
+            tfNbplacesE.setText(newValue.replaceAll("[^\\d]", ""));
+        }
+    }
+            });
+//         String nbplaces=tfNbplacesE.Integer().getText();
         e.setRegion(cbRegionE.getValue());
           e.setDate_E(date_E);
           e.setDescription(Description);
           e.setTitre(titre); 
           e.setName_C(cbCircuits.getValue());
+          e.setNbplaces(Integer.parseInt(tfNbplacesE.getText()));
         EventServices es=new EventServices(); 
          es.AjouterEvent(e);
          System.out.println("Succés!");

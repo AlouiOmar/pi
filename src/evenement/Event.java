@@ -28,18 +28,21 @@ public class Event {
     String Description;
     String region ;
     String name_C;
+    int nbplaces;
+    int creator;
 //    String point_depart;
 //    String point_arrivee;
 
-    public Event(int id_E, String titre, String date_E, String Description, String region,String name_C) {
+    public Event(int id_E, String titre, String date_E, String Description, String region,String name_C,int nbplaces,int creator) {
         this.id_E = id_E;
         this.titre = titre;
         this.date_E = date_E;
         this.Description = Description;
         this.region = region;
         this.name_C=name_C;
+        this.nbplaces=nbplaces;
+       this.creator=creator;
     }
-
     public int getId_E() {
         return id_E;
     }
@@ -88,13 +91,29 @@ public class Event {
         this.name_C = name_C;
     }
 
+    public int getNbplaces() {
+        return nbplaces;
+    }
+
+    public void setNbplaces(int nbplaces) {
+        this.nbplaces = nbplaces;
+    }
+
+    public int getCreator() {
+        return creator;
+    }
+
+    public void setCreator(int creator) {
+        this.creator = creator;
+    }
+
    
     public Event() {
     }
 
     @Override
     public String toString() {
-        return "Event{" + "id_E=" + id_E + ", titre=" + titre + ", date_E=" + date_E + ", Description=" + Description + ", region=" + region + ", name_C=" + name_C + '}';
+        return "Event{" + "id_E=" + id_E + ", titre=" + titre + ", date_E=" + date_E + ", Description=" + Description + ", region=" + region + ", name_C=" + name_C + ", name_C="+nbplaces+'}';
     }
 
     

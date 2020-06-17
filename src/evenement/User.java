@@ -22,6 +22,11 @@ public class User {
         this.id_U = id_U;
     }
 
+    @Override
+    public String toString() {
+        return "User{" + "nom=" + nom + '}';
+    }
+
     public String getNom() {
         return nom;
     }

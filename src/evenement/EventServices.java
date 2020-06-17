@@ -28,13 +28,16 @@ public class EventServices {
         try {
             
             
-            String req="INSERT INTO event (titre, date_E, Description, region, name_C) VALUES (?,?,?,?,?)";
+            String req="INSERT INTO event (titre, date_E, Description, region, name_C,nbplaces,creator) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps1= Connection.getInstance().getConnection().prepareStatement(req);
             ps1.setString(1,e.getTitre());
             ps1.setString(2,e.getDate_E());
             ps1.setString(3,e.getDescription());
             ps1.setString(4,e.getRegion());
             ps1.setString(5,e.getName_C());
+            ps1.setInt(6,e.getNbplaces());
+            ps1.setInt(7,Vars.current_user.getId_U());
+            
 //            ps1.setString(5,e.getPoint_depart());
 //            ps1.setString(6,e.getPoint_arrivee());
             ps1.executeUpdate();
@@ -116,7 +119,7 @@ public class EventServices {
             {
                 
             Event e = new Event();
-            e.setId_E(rs.getInt("id_E"));
+            e.setId_E(rs.getInt("id"));
             e.setTitre(rs.getString("titre"));
             e.setDate_E(rs.getString("Date_E"));
             e.setDescription(rs.getString("description"));
@@ -143,38 +146,52 @@ public class EventServices {
         try {
             
             
-            String req="INSERT INTO Participation (id_E,id_U,nom, titre) VALUES (?,?,?,?)";
+            String req="INSERT INTO participer (user_id,event_id) VALUES (?,?)";
             PreparedStatement ps1= Connection.getInstance().getConnection().prepareStatement(req);
             ps1.setInt(1, e.getId_E());
-            ps1.setInt(2, u.getId_U());
-            ps1.setString(3,u.getNom());
-            ps1.setString(4,e.getTitre());
+            ps1.setInt(2, Vars.current_user.getId_U());
+           
 //            ps1.setString(5,e.getPoint_depart());
 //            ps1.setString(6,e.getPoint_arrivee());
             ps1.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(EventServices.class.getName()).log(Level.SEVERE, null, ex);
         }}
-    public List<Participation> afficherParticipation(String titre) throws SQLException {
-        List<Participation> l = new ArrayList<>();
+    public List<User> afficherParticipation(int id) throws SQLException {
+        List<User> l = new ArrayList<>();
        // UserServices uu=new UserServices();
        
         try {
-            String req="SELECT nom FROM participation where titre='"+titre+"'";
+            int a = 0;
+                      String req="SELECT u.username as nb  FROM participer p, fos_user u where p.event_id='"+id+"' and p.user_id=u.id ";
+                      
+
+//            String req="SELECT u.username,u.id,p.user_id,p.event_id FROM fos_user u,participer p where u.id=p.user_id and p.event_id='"+id+'"';
             Statement s=Connection.getInstance().getConnection().createStatement();
             ResultSet rs=s.executeQuery(req);
+            
             while(rs.next())
             {
                 
-            Participation p=new Participation();
+            User p=new User();
             
-            p.setNom(rs.getString("nom"));
-           
+                System.out.println(rs.getString("nb"));  
+            p.setNom(rs.getString("nb"));
+            l.add(p);
             
-            
-                l.add(p);
+          
             
             }
+//           String req2="SELECT id,username FROM fos_user where id='"+a+"' ";
+//           Statement s2=Connection.getInstance().getConnection().createStatement();
+//           ResultSet rs2=s.executeQuery(req2);
+//           while(rs2.next())
+//            {
+//                User u =new User();
+//                u.setId_U(rs.getInt("id"));
+//            u.setNom(rs.getString("username"));
+//            }
+            
         } catch (SQLException ex) {
             Logger.getLogger(EventServices.class.getName()).log(Level.SEVERE, null, ex);
         }
