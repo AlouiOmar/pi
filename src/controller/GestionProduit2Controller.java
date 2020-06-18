@@ -24,16 +24,16 @@ import javafx.stage.Stage;
  *
  * @author Raef
  */
-public class GestionProduitController implements Initializable {
+public class GestionProduit2Controller implements Initializable {
 
-    @FXML
-    private ImageView add_img;
-    @FXML
-    private ImageView search_img;
     @FXML
     private Button ajouter;
     @FXML
+    private ImageView add_img;
+    @FXML
     private Button rechercher;
+    @FXML
+    private ImageView search_img;
     @FXML
     private ImageView produitAction;
     @FXML
@@ -47,7 +47,7 @@ public class GestionProduitController implements Initializable {
         // TODO
     }    
 
-    @FXML
+     @FXML
     private void AjouerAction(ActionEvent event) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Ajouter.fxml"));
@@ -61,7 +61,7 @@ public class GestionProduitController implements Initializable {
 
     @FXML
     private void RechercherAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/Afficher.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/Afficher2.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -77,8 +77,8 @@ public class GestionProduitController implements Initializable {
 
     @FXML
     private void produitAction(ActionEvent event) throws IOException {
-     //  if(){
-   Parent root = FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
+    //  if(){
+   Parent root = FXMLLoader.load(getClass().getResource("/gui/GestionProduit2.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -110,7 +110,5 @@ public class GestionProduitController implements Initializable {
     @FXML
     private void circuitAction(ActionEvent event) {
     }
-
-
     
 }

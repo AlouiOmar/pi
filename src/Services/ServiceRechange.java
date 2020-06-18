@@ -5,8 +5,8 @@
  */
 package Services;
 
-import entities.Rechange;
-import entities.user;
+import entities.Produit;
+import entities.Fos_user;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,146 +24,168 @@ import utils.MaConnection;
 public class ServiceRechange {
     Connection cnx = MaConnection.getInstance().getConnection();
     Statement stm;
-    user loggeduser;
+    Produit loggeduser;
 
 
     public ServiceRechange() throws SQLException {
        
             stm = cnx.createStatement();
-           loggeduser=new user(0, "fff", "eee");
+       //    loggeduser=new user(0, "fff", "eee");
     }
     
-    public void addRechange(Rechange p) throws SQLException {
-java.sql.Date date=new java.sql.Date(new java.util.Date().getTime());
+    public void addRechange(Produit p) throws SQLException {
+         java.sql.Date date=new java.sql.Date(new java.util.Date().getTime());
         String querry = " INSERT INTO `produit` "
-                + "(`id_P`,`id_U`,`nom_P`, `type_P`, `marque_P`, `prix_P`, `photo_P`,`date`) "
-                + "VALUES (NULL, '" + loggeduser.getId_U()+ "','" 
+                + "(`id_P`,`nom_P`, `marque_P`, `categorie_P`, `couleur_P`, `prix_P`,`date`,`photo_P`,`typeP`,`userId`,`tel`) "
+                + "VALUES (NULL,'" 
                 + p.getNom_P() + "', '" 
-                + p.getType_P() + "', '" 
                 + p.getMarque_P() + "', '" 
-                + p.getPrix_P() + "', '" 
+                + p.getCategorie_P() + "', '" 
+                + p.getCouleur_P() + "', '" 
+                + p.getPrix_P() + "','" 
+                + date + "', '" 
                 + p.getPhoto_P() + "','" 
-                + date + "')";
+                + p.getType_P() + "','" 
+                + 1+ "','" 
+                + p.getTel() + "')";
         stm.executeUpdate(querry);
-
-    }
-    
-    
-    public List<Rechange> getRechanges() throws SQLException{
-    
-    String query = "SELECT * FROM `produit` WHERE type_P = 'rechange'";
+       }
+        
+       public List<Produit> getRechanges() throws SQLException {
+       String query = "SELECT * FROM `produit` WHERE typeP = 3";
         ResultSet rst = stm.executeQuery(query);
-        List<Rechange> rechanges = new ArrayList<>();
+        List<Produit> velos = new ArrayList<>();
         while (rst.next()) {
-             Rechange r2 = new Rechange();
-            r2.setNom_P(rst.getString("nom_P"));
-            r2.setType_P(rst.getString("type_P"));
-            r2.setMarque_P(rst.getString("marque_P"));
-            r2.setPrix_P(rst.getFloat("prix_P"));
-            r2.setPhoto_P(rst.getString("photo_P"));
-            r2.setDate(rst.getDate("date"));
-            rechanges.add(r2);
+           
+            Produit v2 = new Produit();
+    
+            v2.setNom_P(rst.getString("nom_P"));
+          
+            v2.setMarque_P(rst.getString("marque_P"));
+            v2.setCategorie_P(rst.getString("categorie_P"));
+            v2.setCouleur_P(rst.getString("couleur_P"));
+            v2.setPrix_P(rst.getFloat("prix_P"));
+             v2.setDate(rst.getDate("date"));
+            v2.setPhoto_P(rst.getString("photo_P"));
+             v2.setType_P(rst.getInt("typeP"));
+              v2.setTel(rst.getInt("tel"));
+            velos.add(v2);
         }
-        return rechanges;
-    
+        return velos;
     }
-    
-    
-    
-      public Rechange getRechangeById(int ID) throws SQLException {
+       
+       public Produit getRechangeById(int ID) throws SQLException {
         String querry = "SELECT * FROM `produit` WHERE `id_P` = " + ID + "";
         stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(querry);
-        Rechange r = new Rechange();
+        Produit v = new Produit();
         if (rst.next()) {
-          r.setId_P(rst.getInt("id_P"));
-            r.setNom_P(rst.getString("nom_P"));
-            r.setType_P(rst.getString("type_P"));
-            r.setPrix_P(rst.getFloat("prix_P"));
-            r.setPhoto_P(rst.getString("photo_P"));
-            r.setDate(rst.getDate("date"));
+             
+            v.setNom_P(rst.getString("nom_P"));
+              v.setMarque_P(rst.getString("marque_P"));
+            v.setCategorie_P(rst.getString("categorie_P"));
+            v.setCouleur_P(rst.getString("couleur_P"));
+            v.setPrix_P(rst.getFloat("prix_P"));
+            v.setPhoto_P(rst.getString("photo_P"));
+            v.setDate(rst.getDate("date"));
+            v.setTel(rst.getInt("tel"));
         }
-        return r;
+        return v;
     }
-    
-    
-    
-     public void UpdateRechange(Rechange r) throws SQLException{
-     
-     PreparedStatement pla = cnx.prepareStatement("update produit set   nom_P=?,marque_P=?, prix_P=?, photo_P=? where nom_P=?");
-        pla.setString(1, r.getNom_P());
-        pla.setString(2, r.getMarque_P());
-        pla.setFloat(3, r.getPrix_P());
-        pla.setString(4, r.getPhoto_P());
-        pla.setString(5, r.getNom_P());
+       
+       
+       
+       
+       
+       
        
 
+       
+             
+       public void UpdateRechange(Produit p) throws SQLException {
+        PreparedStatement pla = cnx.prepareStatement("update produit set   nom_P=?,marque_P=?,categorie_P=?,couleur_P=?, prix_P=?,tel=?, photo_P=? where nom_P=?");
+        pla.setString(1, p.getNom_P());
+      
+        pla.setString(2, p.getMarque_P());
+        pla.setString(3, p.getCategorie_P());
+        pla.setString(4, p.getCouleur_P());
+        pla.setFloat(5, p.getPrix_P());
+        pla.setInt(6, p.getTel());
+        pla.setString(7, p.getPhoto_P());
+        
+       
+
+        pla.setString(8, p.getNom_P());
+     
+
         pla.executeUpdate();
-     
-     }
-     
-     
-     
-     public void deleteRechange(Rechange r) throws SQLException {
+
+    }
+       
+
+       
+       public void deleteRechange(Produit v) throws SQLException {
 
         String querry = "DELETE FROM produit WHERE nom_P =?";
         PreparedStatement d = cnx.prepareStatement(querry);
-        d.setString(1, r.getNom_P());
+        d.setString(1, v.getNom_P());
         d.executeUpdate();
         System.out.println("testsup");
 
     }
-     
-   
-     public List<Rechange> FiltrerRechangeByMarque(String marque) throws SQLException {
-        String querry = "SELECT * FROM `produit`WHERE type_P = 'rechange'";
+       
+       
+       
+       public List<Produit> FiltrerVeloByCategorie(String category) throws SQLException {
+        String querry = "SELECT * FROM `produit`WHERE typeP = 3";
         stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(querry);
-        List<Rechange> listR =new ArrayList<>();
-        List<Rechange> listmar =new ArrayList<>();
-       
+        List<Produit> listV =new ArrayList<>();
+        List<Produit> listcat =new ArrayList<>();
+        
         while (rst.next()) {
-            Rechange r = new Rechange();
-           r.setId_P(rst.getInt("id_P"));
-            r.setNom_P(rst.getString("nom_P"));
-            r.setType_P(rst.getString("type_P"));
-            r.setMarque_P(rst.getString("marque_P"));
-            r.setPrix_P(rst.getFloat("prix_P"));
-            r.setPhoto_P(rst.getString("photo_P"));
-            r.setDate(rst.getDate("date"));
-            listR.add(r);            
-            listmar=listR.stream().filter(rech ->rech.getMarque_P().equals(marque)).collect(Collectors.toList());     
+            Produit v = new Produit();
+          
+            v.setNom_P(rst.getString("nom_P"));
+            v.setCategorie_P(rst.getString("categorie_P"));
+            v.setCouleur_P(rst.getString("couleur_P"));
+            v.setPrix_P(rst.getFloat("prix_P"));
+            v.setPhoto_P(rst.getString("photo_P"));
+            v.setDate(rst.getDate("date"));
+            v.setTel(rst.getInt("tel"));
+            listV.add(v);            
+            listcat=listV.stream().filter(velo ->velo.getCategorie_P().equals(category)).collect(Collectors.toList());     
         
         }
-        return listmar;
+        return listcat;
            
     }
-     
-     
-     
-      
-        public List<Rechange> FiltrerRechangeByprix(float f1, float f2) throws SQLException{
-       String querry = "SELECT * FROM produit WHERE type_P='rechange' AND prix_P BETWEEN " + f1 + " AND " + f2 ;
-       Statement stm = cnx.createStatement();
+       
+       
+       public List<Produit> FiltrerRechangeByprix(float f1, float f2) throws SQLException{
+       String querry = "SELECT * FROM produit WHERE typeP= 1 AND prix_P BETWEEN " + f1 + " AND " + f2 ;
+        stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(querry);
-        List<Rechange> ListPrix = new ArrayList<>();
-        
+        List<Produit> ListPrix = new ArrayList<>();
+      
           while (rst.next()) {
-            Rechange r = new Rechange();
-            r.setId_P(rst.getInt("id_P"));
-            r.setNom_P(rst.getString("nom_P"));
-            r.setType_P(rst.getString("type_P"));
-            r.setMarque_P(rst.getString("marque_P"));
-            r.setPrix_P(rst.getFloat("prix_P"));
-            r.setPhoto_P(rst.getString("photo_P"));
-            r.setDate(rst.getDate("date"));
-            ListPrix.add(r);
+            Produit v = new Produit();
+            v.setId_P(rst.getInt("id_P"));
+            v.setNom_P(rst.getString("nom_P"));
+            v.setMarque_P(rst.getString("marque_P"));
+            v.setCategorie_P(rst.getString("categorie_P"));
+            v.setCouleur_P(rst.getString("couleur_P"));
+            v.setPrix_P(rst.getFloat("prix_P"));
+            v.setPhoto_P(rst.getString("photo_P"));
+            v.setDate(rst.getDate("date"));
+            v.setTel(rst.getInt("tel"));
+            ListPrix.add(v);
           
           }
           
           return ListPrix;
        }
-     
-     
+       
+       
      
 }

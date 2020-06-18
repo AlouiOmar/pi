@@ -27,12 +27,10 @@ import javafx.stage.Stage;
  *
  * @author Raef
  */
-public class AfficherController implements Initializable {
+public class Afficher2Controller implements Initializable {
 
     @FXML
-    private AnchorPane mainPane;
-    @FXML
-    private Separator separateur;
+    private Button back_gestion_;
     @FXML
     private Button bntAfficherVelo;
     @FXML
@@ -40,11 +38,13 @@ public class AfficherController implements Initializable {
     @FXML
     private Button btnAfficherRechange;
     @FXML
-    private Button back_gestion_;
+    private Separator separateur;
     @FXML
     private ImageView img_back;
     @FXML
-    private Label titre_ID;
+    private AnchorPane mainPane;
+    @FXML
+    private Label aff_Act;
 
     /**
      * Initializes the controller class.
@@ -58,33 +58,34 @@ public class AfficherController implements Initializable {
     private void bnt_Afficher_Velo_Action(ActionEvent event) throws IOException {
         
         
-         AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherVelo.fxml"));
+         AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherVeloUser.fxml"));
         mainPane.getChildren().setAll(pane);
-        titre_ID.setText("Afficher Vélo");
+        
+        aff_Act.setText("Afficher vélos");
     }
 
     @FXML
     private void btn_Afficher_Accessoire_Action(ActionEvent event)throws IOException {
         
-        AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherAccessoire.fxml"));
+        AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherAccessoireUser.fxml"));
         mainPane.getChildren().setAll(pane);
-        titre_ID.setText("Afficher Accessoire");
+        aff_Act.setText("Afficher Accessoires");
     }
 
     @FXML
     private void btn_Afficher_Rechange_Action(ActionEvent event) throws IOException{
         
-        AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherRechange.fxml"));
+        AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AfficherRechangeUser.fxml"));
         mainPane.getChildren().setAll(pane);
+        aff_Act.setText("Afficher pièces de rechange");
         
-        titre_ID.setText("Afficher pièce de rechange");
     }
 
     
     @FXML
     private void back_gestion_action(ActionEvent event) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/GestionProduit2.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -93,7 +94,4 @@ public class AfficherController implements Initializable {
     }
     
         
-        
-    }
-    
-
+}

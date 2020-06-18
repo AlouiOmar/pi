@@ -5,6 +5,7 @@ package entities;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.sql.Date;
 import java.util.Objects;
 
 /**
@@ -12,18 +13,105 @@ import java.util.Objects;
  * @author Raef
  */
 public class Produit {
-
-    private int id_P;
-    private int id_U;
+ private int id_P;
     private String nom_P;
-    private String type_P;
-    
-public Produit(){}
-    public Produit(int id_P, int id_U,String nom_P, String type_P) {
+    private String marque_P;
+    private String categorie_P;
+    private String couleur_P;
+    private float prix_P;
+    private Date date;
+    private String photo_P;
+    private int type_P;
+    private int userId;
+    private int tel;
+
+    public Produit() {
+    }
+
+    public Produit(int id_P, String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, Date date, String photo_P, int type_P, int userId, int tel) {
         this.id_P = id_P;
-        this.id_U = id_U;
         this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.date = date;
+        this.photo_P = photo_P;
         this.type_P = type_P;
+        this.userId = userId;
+        this.tel = tel;
+    }
+
+    
+    
+    
+    
+      public Produit(int id_P, String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, int tel) {
+        this.id_P = id_P;
+        this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.tel = tel;
+   
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public Produit(int id_P, String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, int tel, int userId) {
+        this.id_P = id_P;
+        this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.tel = tel;
+        this.userId = userId;
+    }
+
+    public Produit(String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, int tel) {
+
+        this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.tel = tel;
+    }
+
+    public Produit(String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, String photo_P, int tel) {
+        this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.photo_P = photo_P;
+        this.tel = tel;
+ 
+
+    }
+
+    public Produit(String nom_P, String marque_P, String categorie_P, String couleur_P, float prix_P, Date date, String photo_P) {
+        this.nom_P = nom_P;
+        this.marque_P = marque_P;
+        this.categorie_P = categorie_P;
+        this.couleur_P = couleur_P;
+        this.prix_P = prix_P;
+        this.date = date;
+        this.photo_P = photo_P;
+
     }
 
     public int getId_P() {
@@ -32,13 +120,6 @@ public Produit(){}
 
     public void setId_P(int id_P) {
         this.id_P = id_P;
-    }
-     public int getId_U() {
-        return id_U;
-    }
-
-    public void setId_U(int id_U) {
-        this.id_U = id_U;
     }
 
     public String getNom_P() {
@@ -49,58 +130,81 @@ public Produit(){}
         this.nom_P = nom_P;
     }
 
-    public String getType_P() {
+    public String getMarque_P() {
+        return marque_P;
+    }
+
+    public void setMarque_P(String marque_P) {
+        this.marque_P = marque_P;
+    }
+
+    public String getCategorie_P() {
+        return categorie_P;
+    }
+
+    public void setCategorie_P(String categorie_P) {
+        this.categorie_P = categorie_P;
+    }
+
+    public String getCouleur_P() {
+        return couleur_P;
+    }
+
+    public void setCouleur_P(String couleur_P) {
+        this.couleur_P = couleur_P;
+    }
+
+    public float getPrix_P() {
+        return prix_P;
+    }
+
+    public void setPrix_P(float prix_P) {
+        this.prix_P = prix_P;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getPhoto_P() {
+        return photo_P;
+    }
+
+    public void setPhoto_P(String photo_P) {
+        this.photo_P = photo_P;
+    }
+
+    public int getType_P() {
         return type_P;
     }
 
-    public void setType_P(String type_P) {
+    public void setType_P(int type_P) {
         this.type_P = type_P;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.id_P;
-        hash = 79 * hash + this.id_U;
-        hash = 79 * hash + Objects.hashCode(this.nom_P);
-        hash = 79 * hash + Objects.hashCode(this.type_P);
-        return hash;
+    public int getUserId() {
+        return userId;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Produit other = (Produit) obj;
-        if (this.id_P != other.id_P) {
-            return false;
-        }
-        if (this.id_U != other.id_U) {
-            return false;
-        }
-        if (!Objects.equals(this.nom_P, other.nom_P)) {
-            return false;
-        }
-        if (!Objects.equals(this.type_P, other.type_P)) {
-            return false;
-        }
-        return true;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getTel() {
+        return tel;
+    }
+
+    public void setTel(int tel) {
+        this.tel = tel;
     }
 
     @Override
     public String toString() {
-        return "Produit{" + "id_P=" + id_P + ", id_U=" + id_U + ", nom_P=" + nom_P + ", type_P=" + type_P + '}';
+        return "Produit{" + "id_P=" + id_P + ", nom_P=" + nom_P + ", marque_P=" + marque_P + ", categorie_P=" + categorie_P + ", couleur_P=" + couleur_P + ", prix_P=" + prix_P + ", date=" + date + ", photo_P=" + photo_P + ", type_P=" + type_P + ", userId=" + userId + ", tel=" + tel + '}';
     }
-
-   
-
-
 
 }

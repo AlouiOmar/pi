@@ -24,10 +24,16 @@ public class PidevFx extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-    Parent root=FXMLLoader.load(getClass().getResource("../gui/GestionProduit.fxml"));
+      //  if(){
+    Parent root=FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
     Scene scene=new Scene(root);
     stage.setScene(scene);
     stage.show();
+//        }else { Parent root=FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
+//    Scene scene=new Scene(root);
+//    stage.setScene(scene);
+//    stage.show();
+//}
     }
 
     /**

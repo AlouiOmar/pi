@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Separator;
 import javafx.scene.image.ImageView;
@@ -43,6 +44,8 @@ public class AjouterController implements Initializable {
     private Button btnRechange1;
     @FXML
     private ImageView back;
+    @FXML
+    private Label id_prod;
 
     /**
      * Initializes the controller class.
@@ -57,13 +60,14 @@ public class AjouterController implements Initializable {
         
         AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AjouterProduit.fxml"));
         mainPane.getChildren().setAll(pane);
-        
+        id_prod.setText("Ajouter Vélo");
     }
 
     @FXML
     private void btnAccessoireAction(ActionEvent event) throws IOException {
         AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AjouterAccessoire.fxml"));
         mainPane.getChildren().setAll(pane);
+         id_prod.setText("Ajouter Accessoire");
     }
 
     @FXML
@@ -71,12 +75,13 @@ public class AjouterController implements Initializable {
         
        AnchorPane pane=FXMLLoader.load(getClass().getResource("/gui/AjouterRechange.fxml"));
         mainPane.getChildren().setAll(pane);  
+         id_prod.setText("Ajouter pièce de rechange");
     }
 
     @FXML
     private void retour_action(ActionEvent event) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("../gui/GestionProduit.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/GestionProduit.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -11,30 +11,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="100.0" style="-fx-background-color: #959595;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjouterController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjouterController">
    <children>
-      <AnchorPane fx:id="mainPane" layoutX="362.0" layoutY="130.0" prefHeight="571.0" prefWidth="790.0" />
-      <Label layoutX="544.0" layoutY="20.0" style="-fx-text-fill: white; -fx-font-style: oblique;" text="Ajouter Produit">
+      <AnchorPane fx:id="mainPane" layoutX="362.0" layoutY="171.0" prefHeight="530.0" prefWidth="790.0" />
+      <Label fx:id="id_prod" layoutX="524.0" layoutY="74.0" style="-fx-text-fill: #959595; -fx-font-style: oblique;" text="Ajouter Produit">
          <font>
             <Font size="71.0" />
          </font>
       </Label>
-      <Button fx:id="bntAjouterVelo" layoutX="71.0" layoutY="216.0" mnemonicParsing="false" onAction="#bntAjouterVeloAction" prefHeight="80.0" prefWidth="255.0" style="-fx-background-color: white; -fx-background-radius: 50px; -fx-text-fill: #959595; -fx-font-weight: bold; -fx-font-style: oblique;" text="Vélo">
+      <Button fx:id="bntAjouterVelo" layoutX="71.0" layoutY="216.0" mnemonicParsing="false" onAction="#bntAjouterVeloAction" prefHeight="80.0" prefWidth="255.0" style="-fx-background-color: #959595; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique;" text="Vélo">
          <font>
             <Font size="37.0" />
          </font>
       </Button>
-      <Button fx:id="btnAccessoire" layoutX="69.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnAccessoireAction" prefHeight="77.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 50px; -fx-text-fill: #959595; -fx-font-weight: bold; -fx-font-style: oblique;" text="Accessoire">
+      <Button fx:id="btnAccessoire" layoutX="69.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnAccessoireAction" prefHeight="77.0" prefWidth="257.0" style="-fx-background-color: #959595; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique;" text="Accessoire">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="btnRechange" layoutX="68.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnRechangeAction" prefHeight="76.0" prefWidth="258.0" style="-fx-background-color: white; -fx-background-radius: 50px; -fx-text-fill: #959595; -fx-font-weight: bold; -fx-font-style: oblique;" text="Pièce de rechange">
+      <Button fx:id="btnRechange" layoutX="68.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnRechangeAction" prefHeight="76.0" prefWidth="258.0" style="-fx-background-color: #959595; -fx-background-radius: 50px; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: oblique;" text="Pièce de rechange">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Separator fx:id="separateur" layoutX="351.0" layoutY="56.0" opacity="0.62" orientation="VERTICAL" prefHeight="650.0" prefWidth="22.0">
+      <Separator fx:id="separateur" layoutX="351.0" layoutY="99.0" opacity="0.62" orientation="VERTICAL" prefHeight="580.0" prefWidth="21.0">
          <effect>
             <Lighting>
                <bumpInput>

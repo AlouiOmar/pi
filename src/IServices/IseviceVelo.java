@@ -5,7 +5,7 @@
  */
 package IServices;
 
-import entities.Velo;
+import entities.Produit;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,19 +15,19 @@ import java.util.List;
  */
 public interface IseviceVelo {
 
-    public void addVelo(Velo p) throws SQLException;
+    public void addVelo(Produit p) throws SQLException;
 
-    public List<Velo> getVelos() throws SQLException;
+    public List<Produit> getVelos() throws SQLException;
 
-    public Velo getVeloById(int ID) throws SQLException;
+    public Produit getVeloById(int ID) throws SQLException;
 
-    public List<Velo> getVeloByCategorie(String category) throws SQLException;
+    public List<Produit> getVeloByCategorie(String category) throws SQLException;
 
-    public void UpdateVelo(Velo p) throws SQLException;
+    public void UpdateVelo(Produit p) throws SQLException;
 
-    public void deleteVelo(Velo v) throws SQLException;
+    public void deleteVelo(Produit v) throws SQLException;
 
-    public List<Velo> FiltrerVeloByCategorie(String category) throws SQLException;
+    public List<Produit> FiltrerVeloByCategorie(String category) throws SQLException;
 
-    public List<Velo> FiltrerVeloByprix(float f1, float f2) throws SQLException;
+    public List<Produit> FiltrerVeloByprix(float f1, float f2) throws SQLException;
 }

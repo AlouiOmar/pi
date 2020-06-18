@@ -5,7 +5,7 @@
  */
 package IServices;
 
-import entities.Accessoire;
+import entities.Produit;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,17 +15,17 @@ import java.util.List;
  */
 public interface IseviceAccessoire {
 
-    public void addAccessoire(Accessoire p) throws SQLException;
+    public void addAccessoire(Produit p) throws SQLException;
 
-    public List<Accessoire> getAccessoires() throws SQLException;
+    public List<Produit> getAccessoires() throws SQLException;
 
-    public Accessoire getAccessoireById(int ID) throws SQLException;
+    public Produit getAccessoireById(int ID) throws SQLException;
 
-    public void UpdateAccessoire(Accessoire r) throws SQLException;
+    public void UpdateAccessoire(Produit r) throws SQLException;
 
-    public void deleteAccessoire(Accessoire a) throws SQLException;
+    public void deleteAccessoire(Produit a) throws SQLException;
 
-    public List<Accessoire> FiltrerAccessoireByCouleur(String color) throws SQLException;
+    public List<Produit> FiltrerAccessoireByCouleur(String color) throws SQLException;
 
-    public List<Accessoire> FiltrerAccessoireByprix(float f1, float f2) throws SQLException;
+    public List<Produit> FiltrerAccessoireByprix(float f1, float f2) throws SQLException;
 }

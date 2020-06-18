@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="725.0" prefWidth="1053.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AfficherController">
+<AnchorPane id="AnchorPane" prefHeight="725.0" prefWidth="1053.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Afficher2Controller">
    <children>
       <Button fx:id="back_gestion_" layoutX="923.0" layoutY="656.0" mnemonicParsing="false" onAction="#back_gestion_action" prefHeight="37.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 60px; -fx-text-fill: white; -fx-background-size: 10; -fx-font-size: 20; -fx-font-weight: bold;" text="    Retour">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Label fx:id="titre_ID" layoutX="467.0" layoutY="39.0" style="-fx-text-overrun: arial; -fx-text-fill: #959595; -fx-font-style: oblique;" text="Afficher Produit">
+      <Label fx:id="aff_Act" layoutX="473.0" layoutY="4.0" style="-fx-text-overrun: arial; -fx-text-fill: #959595; -fx-font-style: oblique;" text="Afficher Produit">
          <font>
             <Font size="71.0" />
          </font>

@@ -33,6 +33,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -45,34 +46,40 @@ import javafx.stage.Stage;
 public class AfficherRechangeController implements Initializable {
     Connection cnx;
     ServiceRechange sr;
-    @FXML
+     @FXML
     private Button btn_afficher;
     @FXML
-    private TableView<Rechange> tf_table;
+    private TableView<Produit> tf_table;
     @FXML
-    private TableColumn<Rechange, String> tf_nom;
+    private TableColumn<Produit, String> tf_nom;
     @FXML
-    private TableColumn<Rechange, String> tf_type;
+    private TableColumn<Produit, String> tf_marque;
     @FXML
-    private TableColumn<Rechange, String> tf_marque;
+    private TableColumn<Produit, String> tf_cat;
     @FXML
-    private TableColumn<Rechange, Float> tf_prix;
+    private TableColumn<Produit, String> tf_couleur;
     @FXML
-    private TableColumn<Rechange, Date> tf_date;
+    private TableColumn<Produit, Float> tf_prix;
     @FXML
-    private TableColumn<Rechange, String> tf_photo;
+    private TableColumn<Produit, Date> tf_date;
+    @FXML
+    private TableColumn<Produit, String> tf_photo;
     @FXML
     private Button btn_supprimer;
     @FXML
-    private ImageView img1;
+    private ImageView img_affiche;
     @FXML
-    private ImageView img2;
+    private ImageView supp_img;
+    @FXML
+    private Button refrech_price_;
     @FXML
     private TextField f11;
     @FXML
     private TextField f22;
+    private ScrollPane scrallPane;
     @FXML
-    private Button refrech_price_;
+    private TableColumn<Produit, Integer> tf_tel;
+    
     
   
   
@@ -93,15 +100,17 @@ public class AfficherRechangeController implements Initializable {
             sr = new ServiceRechange();
         
 
-           ArrayList<Rechange> lr;
+           ArrayList<Produit> lr;
        
-            lr = (ArrayList<Rechange>) sr.getRechanges();
-            ObservableList<Rechange> data = FXCollections.observableArrayList(lr);
-            tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+            lr = (ArrayList<Produit>) sr.getRechanges();
+            ObservableList<Produit> data = FXCollections.observableArrayList(lr);
+              tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
+            tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+             tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {
@@ -114,7 +123,7 @@ public class AfficherRechangeController implements Initializable {
     private void Afficher_Rechange(ActionEvent event) throws IOException {
         
         
-        Rechange r = tf_table.getSelectionModel().getSelectedItem();
+        Produit r = tf_table.getSelectionModel().getSelectedItem();
         if (r == null) {
             System.out.println("choose spart part");
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -128,7 +137,7 @@ public class AfficherRechangeController implements Initializable {
         else {
 
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("../gui/RechangeRechercher.fxml"));
+                    getClass().getResource("/gui/RechangeRechercher.fxml"));
             Scene scene = new Scene(loader.load());
             RechangeRechercherController ct = loader.getController();
              ct.setRechange(r);
@@ -147,7 +156,7 @@ public class AfficherRechangeController implements Initializable {
     private void Supprimer_Rechnage(ActionEvent event) throws SQLException {
         
         
-        Rechange r=tf_table.getSelectionModel().getSelectedItem();
+        Produit r=tf_table.getSelectionModel().getSelectedItem();
         
         if(r==null){
         
@@ -195,7 +204,7 @@ public class AfficherRechangeController implements Initializable {
     
     
     public void loadData() throws SQLException{
-    ObservableList<Rechange> dataa = null;
+    ObservableList<Produit> dataa = null;
 
     dataa = FXCollections.observableArrayList(new ServiceRechange().getRechanges());
     }
@@ -207,15 +216,18 @@ public class AfficherRechangeController implements Initializable {
             sr = new ServiceRechange();
         
 
-           ArrayList<Rechange> lr;
+           ArrayList<Produit> lr;
        
-            lr = (ArrayList<Rechange>) sr.getRechanges();
-            ObservableList<Rechange> data = FXCollections.observableArrayList(lr);
-            tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+            lr = (ArrayList<Produit>) sr.getRechanges();
+            ObservableList<Produit> data = FXCollections.observableArrayList(lr);
+               tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
+
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
+            tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+                        tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {
@@ -250,15 +262,18 @@ public class AfficherRechangeController implements Initializable {
             sr = new ServiceRechange();
         
 
-           ArrayList<Rechange> lr;
+           ArrayList<Produit> lr;
        
-            lr = (ArrayList<Rechange>) sr.FiltrerRechangeByprix(f1, f2);
-            ObservableList<Rechange> data = FXCollections.observableArrayList(lr);
+            lr = (ArrayList<Produit>) sr.FiltrerRechangeByprix(f1, f2);
+            ObservableList<Produit> data = FXCollections.observableArrayList(lr);
             tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+        
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
+            tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+                tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {

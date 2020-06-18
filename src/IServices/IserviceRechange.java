@@ -5,7 +5,7 @@
  */
 package IServices;
 
-import entities.Rechange;
+import entities.Produit;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,17 +15,16 @@ import java.util.List;
  */
 public interface IserviceRechange {
 
-    public void addRechange(Rechange p) throws SQLException;
+    public void addRechange(Produit p) throws SQLException;
 
-    public List<Rechange> getRechanges() throws SQLException;
+    public List<Produit> getRechanges() throws SQLException;
 
-    public Rechange getRechangeById(int ID) throws SQLException;
+    public Produit getRechangeById(int ID) throws SQLException;
 
-    public void UpdateRechange(Rechange r) throws SQLException;
+    public void UpdateRechange(Produit r) throws SQLException;
 
-    public void deleteRechange(Rechange r) throws SQLException;
+    public void deleteRechange(Produit r) throws SQLException;
 
-    public List<Rechange> FiltrerRechangeByMarque(String marque) throws SQLException;
     
-    public List<Rechange> FiltrerRechangeByprix(float f1, float f2) throws SQLException;
+    public List<Produit> FiltrerRechangeByprix(float f1, float f2) throws SQLException;
 }

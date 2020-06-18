@@ -41,8 +41,10 @@ import utils.MaConnection;
  */
 public class AjouterAccessoireController implements Initializable {
 
-    @FXML
+      @FXML
     private TextField tf_nom;
+    @FXML
+    private TextField tf_cat;
     @FXML
     private TextField tf_marque;
     @FXML
@@ -55,44 +57,98 @@ public class AjouterAccessoireController implements Initializable {
     private Button tf_ajouter;
     @FXML
     private Button tf_nettoyer;
-    @FXML
     private TextField tf_type;
     @FXML
     private DatePicker tf_date;
-    
-     public Connection cnx;
-     ServiceAccessoire sa;
+    public Connection cnx;
+     ServiceVelo sv;
     @FXML
     private ImageView add;
     @FXML
-    private ImageView netoyer;
+    private ImageView clear;
     @FXML
     private ImageView attache;
     
+     private  String ACCOUNT_SID= "AC4f79c0e150ee4006a4ce3aa4fb7590e1";
+    private  String AUTH_TOKEN = "ccebe5e123b2f145fc5598d8151685e5";
+    @FXML
+    private TextField tf_tel;
     
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-         try {
-            sa= new ServiceAccessoire();
+      
+        try {
+            sv= new ServiceVelo();
         } catch (SQLException ex) {
             Logger.getLogger(AjouterProduitController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // TODO
-    }    
+      
+        
+    }  
+    
+     public AjouterAccessoireController() throws SQLException {
+      
+    }
 
     @FXML
-    private void attacher_photo(ActionEvent event) throws SQLException {
+    private void ConfirmerAjout(ActionEvent event) throws SQLException {
+       if (tf_nom.getText().length() == 0 || tf_tel.getText().length() == 0 || tf_marque.getText().length() == 0 || tf_couleur.getText().length() == 0 || tf_cat.getText().length() == 0 || tf_prix.getText().length() == 0) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("veuillez remplir!!");
+            alert.setHeaderText("WARNING !");
+            alert.setContentText("some field are empty !!");
+            alert.showAndWait(); 
+          clear_field();
+       }
+            if (Float.parseFloat(tf_prix.getText())<0){
+                
+             Alert alert3 = new Alert(Alert.AlertType.WARNING);
+            alert3.setTitle(null);
+            alert3.setHeaderText("WARNING !");
+            alert3.setContentText("veuillez saisir un valeur positif !!");
+            alert3.showAndWait();  
+            tf_prix.clear();
+            }
+      
+        
+        else{
+        Produit v= new Produit(1, tf_nom.getText(),tf_marque.getText(), tf_cat.getText(), tf_couleur.getText(), Float.valueOf(tf_prix.getText()),Date.valueOf(tf_date.getValue()),tf_photo.getText(),2,1,Integer.valueOf(tf_tel.getText()) );
+       
+        
+        try {
+            sv.addVelo(v);
+            
+            
+   
+            Alert alert =new Alert(Alert.AlertType.INFORMATION);
+             alert.setTitle("Ajout terminé");
+    alert.setHeaderText(null);
+   alert.setContentText("L'accessoire : " +v.getNom_P()+"  est ajoutée avec succès ");
+    alert.showAndWait();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+                 
+  
+        System.out.println("ajout terminé");
+        }
+ 
+                }
+     
+    }
+
+    @FXML
+    private void attacher_photo(ActionEvent event) {
+        
         Stage primary = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Selectionner une image");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File file = fileChooser.showOpenDialog(primary);
-        String path = "C:\\wamp64\\www";
+        String path = "C:\\wamp64\\www\\PiSymfony\\web\\public\\uploads";
         tf_photo.setText(file.getName());
         if (file != null) {
             try {
@@ -101,54 +157,31 @@ public class AjouterAccessoireController implements Initializable {
                 e.printStackTrace();
             }
         }
-    }
-
-    @FXML
-    private void ConfirmerAjout(ActionEvent event) throws SQLException{
-        
-        
-         if (tf_nom.getText().length() == 0 || tf_type.getText().length() == 0 || tf_marque.getText().length() == 0 || tf_couleur.getText().length() == 0 || tf_prix.getText().length() == 0) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("veuillez remplir!!");
-            alert.setHeaderText("WARNING !");
-            alert.setContentText("some field are empty !!");
-            alert.showAndWait();  
-       }
-        
-        else{
-        
-        Accessoire a= new Accessoire(1, 2, tf_nom.getText(), tf_type.getText(),tf_marque.getText(), tf_couleur.getText(), Float.valueOf(tf_prix.getText()),null, Date.valueOf(tf_date.getValue()));
-       
-        
-        try {
-            sa.addAccessoire(a);
-            
-            Alert alert =new Alert(Alert.AlertType.INFORMATION);
-             alert.setTitle("Ajout terminé");
-    alert.setHeaderText(null);
-   alert.setContentText("L' accessoire : " +a.getNom_P()+"  est ajoutée avec succès ");
-    alert.showAndWait();
-            
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        System.out.println("ajout terminé");}
         
     }
 
     @FXML
     private void clear_fields(ActionEvent event) {
         
-        tf_nom.clear();
-        tf_type.clear();
+         tf_nom.clear();
+   
         tf_marque.clear();
+        tf_cat.clear();
         tf_couleur.clear();
         tf_prix.clear();
-       
+        tf_tel.clear();
 
         System.out.println(" cleear test");
     }
-    
+    private void clear_field() {
+        
+      tf_nom.clear();
+   
+        tf_marque.clear();
+        tf_cat.clear();
+        tf_couleur.clear();
+        tf_prix.clear();
+        tf_tel.clear();
+        System.out.println(" cleear ok");
+    }
 }

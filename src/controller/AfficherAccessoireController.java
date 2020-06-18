@@ -7,7 +7,7 @@ package controller;
   
 import Services.ServiceAccessoire;
 import com.mysql.jdbc.Connection;
-import entities.Accessoire;
+import entities.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -50,32 +50,34 @@ public class AfficherAccessoireController implements Initializable {
     @FXML
     private Button btn_afficher;
     @FXML
-    private TableView<Accessoire> tf_table;
+    private TableView<Produit> tf_table;
     @FXML
-    private TableColumn<Accessoire, String> tf_nom;
+    private TableColumn<Produit, String> tf_nom;
     @FXML
-    private TableColumn<Accessoire, String> tf_type;
-    @FXML
-    private TableColumn<Accessoire, String> tf_marque;
+    private TableColumn<Produit, String> tf_marque;
     
     @FXML
-    private TableColumn<Accessoire, String> tf_couleur;
+    private TableColumn<Produit, String> tf_couleur;
     @FXML
-    private TableColumn<Accessoire, Float> tf_prix;
+    private TableColumn<Produit, Float> tf_prix;
     @FXML
-    private TableColumn<Accessoire, Date> tf_date;
+    private TableColumn<Produit, Date> tf_date;
     @FXML
-    private TableColumn<Accessoire, String> tf_photo;
-    @FXML
-    private ImageView imgaffiche;
-    @FXML
-    private ImageView imgsupprimer;
+    private TableColumn<Produit, String> tf_photo;
     @FXML
     private Button refrech_price_;
     @FXML
     private TextField f11;
     @FXML
     private TextField f22;
+    @FXML
+    private TableColumn<Produit, String> tf_cat;
+    @FXML
+    private TableColumn<Produit, Integer> tf_tel;
+    @FXML
+    private ImageView img_affiche;
+    @FXML
+    private ImageView supp_img;
     
 
     /**
@@ -89,16 +91,17 @@ public class AfficherAccessoireController implements Initializable {
             sa = new ServiceAccessoire();
         
 
-           ArrayList<Accessoire> la;
+           ArrayList<Produit> la;
        
-            la = (ArrayList<Accessoire>) sa.getAccessoires();
-            ObservableList<Accessoire> data = FXCollections.observableArrayList(la);
-            tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+            la = (ArrayList<Produit>) sa.getAccessoires();
+            ObservableList<Produit> data = FXCollections.observableArrayList(la);
+                tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
             tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+             tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {
@@ -113,7 +116,7 @@ public class AfficherAccessoireController implements Initializable {
     @FXML
     private void Supprimer_accessoire(ActionEvent event) throws SQLException {
         
-        Accessoire a=tf_table.getSelectionModel().getSelectedItem();
+        Produit a=tf_table.getSelectionModel().getSelectedItem();
         
         if(a==null){
         
@@ -156,7 +159,7 @@ public class AfficherAccessoireController implements Initializable {
     @FXML
     private void Afficher_accessoire(ActionEvent event) throws IOException {
         
-        Accessoire a = tf_table.getSelectionModel().getSelectedItem();
+        Produit a = tf_table.getSelectionModel().getSelectedItem();
         if (a == null) {
             System.out.println("choose accessory");
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -169,7 +172,7 @@ public class AfficherAccessoireController implements Initializable {
       else {
 
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("../gui/AccessoireRechercher.fxml"));
+                    getClass().getResource("/gui/AccessoireRechercher.fxml"));
             Scene scene = new Scene(loader.load());
             AccessoireRechercherController ct = loader.getController();
              ct.setAccessoire(a);
@@ -192,16 +195,18 @@ public class AfficherAccessoireController implements Initializable {
             sa = new ServiceAccessoire();
         
 
-           ArrayList<Accessoire> la;
+           ArrayList<Produit> la;
        
-            la = (ArrayList<Accessoire>) sa.getAccessoires();
-            ObservableList<Accessoire> data = FXCollections.observableArrayList(la);
+            la = (ArrayList<Produit>) sa.getAccessoires();
+            ObservableList<Produit> data = FXCollections.observableArrayList(la);
             tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
             tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+                        tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {
@@ -210,7 +215,7 @@ public class AfficherAccessoireController implements Initializable {
     }
      
    public void loadData() throws SQLException{
-    ObservableList<Accessoire> dataaa = null;
+    ObservableList<Produit> dataaa = null;
 
     dataaa = FXCollections.observableArrayList(new ServiceAccessoire().getAccessoires());
     }
@@ -240,16 +245,18 @@ public class AfficherAccessoireController implements Initializable {
             sa = new ServiceAccessoire();
         
 
-           ArrayList<Accessoire> la;
+           ArrayList<Produit> la;
        
-            la = (ArrayList<Accessoire>) sa.FiltrerAccessoireByprix(f1, f2);
-            ObservableList<Accessoire> data = FXCollections.observableArrayList(la);
-            tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
-            tf_type.setCellValueFactory(new PropertyValueFactory<>("type_P"));
+            la = (ArrayList<Produit>) sa.FiltrerAccessoireByprix(f1, f2);
+            ObservableList<Produit> data = FXCollections.observableArrayList(la);
+          tf_nom.setCellValueFactory(new PropertyValueFactory<>("nom_P"));
+        
             tf_marque.setCellValueFactory(new PropertyValueFactory<>("marque_P"));
+            tf_cat.setCellValueFactory(new PropertyValueFactory<>("categorie_P"));
             tf_couleur.setCellValueFactory(new PropertyValueFactory<>("couleur_P"));
             tf_prix.setCellValueFactory(new PropertyValueFactory<>("prix_P"));
             tf_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+                tf_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
             tf_photo.setCellValueFactory(new PropertyValueFactory<>("photo_P"));
             tf_table.setItems(data);
         } catch (SQLException ex) {

@@ -6,11 +6,11 @@
 package controller;
 
 import Services.ServiceVelo;
-import entities.Velo;
-import facebook4j.Facebook;
-import facebook4j.FacebookException;
-import facebook4j.FacebookFactory;
-import facebook4j.auth.AccessToken;
+import com.twilio.Twilio;
+import static com.twilio.example.Example.ACCOUNT_SID;
+import static com.twilio.example.Example.AUTH_TOKEN;
+import com.twilio.rest.api.v2010.account.Message;
+import entities.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +25,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,8 +37,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 /**
  * FXML Controller class
@@ -67,10 +70,17 @@ public class VeloRechercherController implements Initializable {
     @FXML
     private Button retour;
 
-    Velo v;
+    Produit v;
     @FXML
-    private Button tf_partager;
-private Facebook facebook;
+    private ImageView img_idd;
+    @FXML
+    private Button tf_PDf;
+    @FXML
+    private AnchorPane ancho_ID;
+    @FXML
+    private ImageView id_pdf;
+    @FXML
+    private TextField tf_tel;
     /**
      * Initializes the controller class.
      */
@@ -87,10 +97,10 @@ private Facebook facebook;
             tf_couleur.setText(v.getCouleur_P());
             tf_prix.setText(String.valueOf(v.getPrix_P()));
             tf_photo.setText(v.getPhoto_P());
-
+tf_tel.setText(String.valueOf(v.getTel()));
             FileInputStream input;
             try {
-                input = new FileInputStream("C:\\\\wamp64\\\\www\\\\" + v.getPhoto_P() + "");
+                input = new FileInputStream("C:\\\\wamp64\\\\www\\\\PiSymfony\\\\web\\\\public\\\\uploads\\\\" + v.getPhoto_P() + "");
                 Image image = new Image(input);
                 tf_image_view.setImage(image);
             } catch (FileNotFoundException ex) {
@@ -103,7 +113,7 @@ private Facebook facebook;
 
     @FXML
     private void ModifierVelo(ActionEvent event) throws SQLException, FileNotFoundException {
-        Velo vel = new Velo();
+        Produit vel = new Produit();
         if (vel == null) {
 
             System.out.println("choisir un Velo");
@@ -121,7 +131,7 @@ private Facebook facebook;
             vel.setCouleur_P(tf_couleur.getText());
             vel.setPrix_P(Float.valueOf(tf_prix.getText()));
             vel.setPhoto_P(tf_photo.getText());
-            
+            vel.setTel(Integer.valueOf(tf_tel.getText()));
               try {
                ServiceVelo sv=new ServiceVelo();
             sv.UpdateVelo(vel);
@@ -134,7 +144,7 @@ private Facebook facebook;
            
            String title = v.getPhoto_P();
         System.out.println(title);
-        FileInputStream input = new FileInputStream("C:\\wamp64\\www\\" + title + "");
+        FileInputStream input = new FileInputStream("C:\\wamp64\\www\\PiSymfony\\web\\public\\uploads\\" + title + "");
         //  Image image = new Image("C:\\wamp64\\www\\" +title+"") {};
         // ImageView view = new ImageView(input);
         Image image = new Image(input);
@@ -156,7 +166,7 @@ private Facebook facebook;
     @FXML
     private void RetourAfficherVelo(ActionEvent event) throws IOException {
         
-         Parent root = FXMLLoader.load(getClass().getResource("../gui/Afficher.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("/gui/Afficher.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -172,7 +182,7 @@ private Facebook facebook;
         fileChooser.setTitle("Selectionner une image");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File file = fileChooser.showOpenDialog(primary);
-        String path = "C:\\wamp64\\www";
+        String path = "C:\\wamp64\\www\\PiSymfony\\web\\public\\uploads";
         tf_photo.setText(file.getName());
         if (file != null) {
             try {
@@ -183,56 +193,42 @@ private Facebook facebook;
         }
     }
 
-    public void setVelo(Velo vl) {
+    public void setVelo(Produit vl) {
         this.v = vl;
     }
 
-    @FXML
-    private void partagerFBAction(ActionEvent event) throws FacebookException, SQLException{
-        
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Share on Facebook");
-        alert.setHeaderText("do you want to share on facebook!");
-        alert.setContentText(null);
-
-        ButtonType buttonTypeOne = new ButtonType("Yes");
-        ButtonType buttonTypeTwo = new ButtonType("No");
-
-        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeCancel);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == buttonTypeOne) {
-       
-            facebook = new FacebookFactory().getInstance();
-
-            facebook.setOAuthAppId("", "");
-            String accessTokenString = "485353618815021|8kIxZ2cfDJK1_boXSGui9yDL2Es";
-            AccessToken accessToken = new AccessToken(accessTokenString);
-            //set access token
-            facebook.setOAuthAccessToken(accessToken);
-          
-            try {
-                facebook.postStatusMessage("La vélo " + v.getNom_P() + " est avec type " +v.getType_P()
-                        + " et de categorie " + v.getCategorie_P() + " est disponible");
-                System.out.println("qqqqqqqqqqqqqqqqqqqqqqqq");
-            } catch (FacebookException fe) {
-//                Alert alertt= new Alert(Alert.AlertType.INFORMATION);
-////                alert.setTitle("Already share!");
-////                alert.setHeaderText(null);
-////                alert.setContentText("The bike  " +v.getNom_P() + " has already been shared!.");
-//
-//                alertt.showAndWait();
-                System.out.println(fe);
-            }
-        } else if (result.get() == buttonTypeTwo) {
+    
+    
+    
+    void pdf() {
+ System.out.println("To Printer!");
+         PrinterJob job = PrinterJob.createPrinterJob();
+           if(job != null){
+    Window primaryStage = null;
+           job.showPrintDialog(primaryStage); 
             
-           alert.hide();
+    Node root = this.ancho_ID;
+   
+    
+           job.printPage(root);
+           job.endJob();
+            
+       
 
-        }
-
-        
+  }
     }
 
+    @FXML
+    private void PDFAction(ActionEvent event) {
+        
+         pdf();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
