@@ -42,9 +42,18 @@ public class Location {
         this.dateCreation = dateCreation;
     }
 
+    public Location(String titre, String lieu, float prix) {
+         this.titre = titre;
+        this.lieu = lieu;
+        this.prix = prix;
+      
+    }
+
     public Location(String text, String text0, Float valueOf, String text1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+
 
   
 

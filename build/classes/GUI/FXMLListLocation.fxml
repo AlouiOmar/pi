@@ -17,7 +17,7 @@
          <children>
             <AnchorPane layoutX="-12.0" layoutY="-11.0" opacity="0.5" prefHeight="85.0" prefWidth="616.0" style="-fx-background-color: #008080;" AnchorPane.bottomAnchor="326.0" AnchorPane.leftAnchor="-12.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
                <children>
-                  <Label fx:id="labelRentList" layoutX="239.0" layoutY="13.0" text="Rent List" textFill="#ee941a">
+                  <Label fx:id="labelRentList" layoutX="239.0" layoutY="13.0" text="Liste locations" textFill="#ee941a">
                      <font>
                         <Font name="Cambria Italic" size="27.0" />
                      </font>
@@ -26,28 +26,28 @@
             </AnchorPane>
             <TableView fx:id="tableview" layoutX="11.0" layoutY="112.0" prefHeight="264.0" prefWidth="471.0">
                <columns>
-                  <TableColumn fx:id="tcTittre" prefWidth="122.0" text="Title" />
-                  <TableColumn fx:id="tcPrix" prefWidth="89.0" text="Price" />
-                  <TableColumn fx:id="tcLieu" prefWidth="75.0" text="Place" />
+                  <TableColumn fx:id="tcTittre" prefWidth="122.0" text="Titre" />
+                  <TableColumn fx:id="tcPrix" prefWidth="89.0" text="Prix" />
+                  <TableColumn fx:id="tcLieu" prefWidth="75.0" text="Lieu" />
                   <TableColumn fx:id="tcPhoto" prefWidth="75.0" text="Photo" />
                </columns>
             </TableView>
-            <Button fx:id="afficher" layoutX="489.0" layoutY="159.0" mnemonicParsing="false" onAction="#affiche_location" prefHeight="31.0" prefWidth="100.0" text="Visualize" textAlignment="CENTER" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
+            <Button fx:id="afficher" layoutX="489.0" layoutY="159.0" mnemonicParsing="false" onAction="#affiche_location" prefHeight="31.0" prefWidth="100.0" text="Afficher" textAlignment="CENTER" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="delete" layoutX="489.0" layoutY="322.0" mnemonicParsing="false" onAction="#supp" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: F83309;" text="Delete" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
+            <Button fx:id="delete" layoutX="489.0" layoutY="322.0" mnemonicParsing="false" onAction="#supp" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: F83309;" text="Supprimer" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="Rent" layoutX="489.0" layoutY="266.0" mnemonicParsing="false" onAction="#add_Rent" prefHeight="31.0" prefWidth="100.0" text="Add Rent" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
+            <Button fx:id="Rent" layoutX="489.0" layoutY="266.0" mnemonicParsing="false" onAction="#add_Rent" prefHeight="31.0" prefWidth="100.0" text="Reserver" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="update" layoutX="489.0" layoutY="208.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="100.0" text="Update " AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
+            <Button fx:id="update" layoutX="489.0" layoutY="208.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="100.0" text="Modifier" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="11.0">
                <font>
                   <Font size="15.0" />
                </font>

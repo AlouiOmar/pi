@@ -14,26 +14,26 @@
    <children>
       <AnchorPane layoutX="3.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="610.0">
          <children>
-            <Button fx:id="submit" layoutX="165.0" layoutY="441.0" mnemonicParsing="false" onAction="#update" opacity="0.5" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #008080;" text="Submit " textFill="WHITE">
+            <Button fx:id="submit" layoutX="165.0" layoutY="441.0" mnemonicParsing="false" onAction="#update" opacity="0.5" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #008080;" text="Modifier" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="cancel" layoutX="285.0" layoutY="441.0" mnemonicParsing="false" onAction="#Rent_list" opacity="0.5" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: #008080;" text="Cancel" textFill="WHITE">
+            <Button fx:id="cancel" layoutX="285.0" layoutY="441.0" mnemonicParsing="false" onAction="#Rent_list" opacity="0.5" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: #008080;" text="Annuler" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label layoutX="20.0" layoutY="182.0" prefHeight="17.0" prefWidth="61.0" text="Place" />
-            <Label layoutX="21.0" layoutY="232.0" prefHeight="17.0" prefWidth="52.0" text="Price" />
-            <Label fx:id="labelRentUpdate" alignment="TOP_CENTER" layoutX="173.0" layoutY="11.0" prefHeight="17.0" prefWidth="227.0" text="Rent Update" textFill="#ee941a">
+            <Label layoutX="20.0" layoutY="182.0" prefHeight="17.0" prefWidth="61.0" text="Lieu" />
+            <Label layoutX="21.0" layoutY="232.0" prefHeight="17.0" prefWidth="52.0" text="Prix" />
+            <Label fx:id="labelRentUpdate" alignment="TOP_CENTER" layoutX="173.0" layoutY="11.0" prefHeight="17.0" prefWidth="227.0" text="Modifier location" textFill="#ee941a">
                <font>
                   <Font name="Cambria Italic" size="30.0" />
                </font>
             </Label>
             <TextField fx:id="lieu" layoutX="83.0" layoutY="176.0" prefHeight="26.0" prefWidth="174.0" />
             <TextField fx:id="prix" layoutX="80.0" layoutY="230.0" prefHeight="26.0" prefWidth="174.0" />
-            <Label layoutX="21.0" layoutY="131.0" text="Title" />
+            <Label layoutX="21.0" layoutY="131.0" text="Titre" />
             <Label layoutX="20.0" layoutY="276.0" text="Photo" />
             <TextField fx:id="titre" layoutX="81.0" layoutY="127.0" prefHeight="25.0" prefWidth="174.0" />
             <Button fx:id="photo" layoutX="77.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Upload" />

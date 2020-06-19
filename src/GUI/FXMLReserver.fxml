@@ -15,27 +15,27 @@
    <children>
       <AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="610.0">
          <children>
-            <Label fx:id="labelBykeRent" alignment="TOP_CENTER" layoutX="166.0" layoutY="21.0" text="Byke Rent" textAlignment="CENTER" textFill="#ee941a">
+            <Label fx:id="labelBykeRent" alignment="TOP_CENTER" layoutX="166.0" layoutY="21.0" text="Reserver" textAlignment="CENTER" textFill="#ee941a">
                <font>
                   <Font name="Cambria Math" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="215.0" text="Begin">
+            <Label layoutX="31.0" layoutY="215.0" text="Date debut">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="284.0" text="End">
+            <Label layoutX="31.0" layoutY="284.0" text="Date fin">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="submit" layoutX="191.0" layoutY="394.0" mnemonicParsing="false" onAction="#reserver" opacity="0.5" style="-fx-background-color: #008080;" text="Submit" textFill="WHITE">
+            <Button fx:id="submit" layoutX="191.0" layoutY="394.0" mnemonicParsing="false" onAction="#reserver" opacity="0.5" style="-fx-background-color: #008080;" text="Valider" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="exit" layoutX="274.0" layoutY="394.0" mnemonicParsing="false" onAction="#back" opacity="0.5" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #008080;" text="Exit" textFill="WHITE">
+            <Button fx:id="exit" layoutX="274.0" layoutY="394.0" mnemonicParsing="false" onAction="#back" opacity="0.5" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #008080;" text="Annuler" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -43,7 +43,7 @@
             <DatePicker fx:id="dateDeb" layoutX="120.0" layoutY="219.0" prefHeight="25.0" prefWidth="195.0" />
             <DatePicker fx:id="dateFin" layoutX="122.0" layoutY="288.0" prefHeight="25.0" prefWidth="195.0" />
             <AnchorPane layoutX="405.0" layoutY="-1.0" opacity="0.5" prefHeight="489.0" prefWidth="205.0" style="-fx-background-color: #008080;" AnchorPane.bottomAnchor="-6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0" />
-            <Label layoutX="34.0" layoutY="150.0" text="Title">
+            <Label layoutX="34.0" layoutY="150.0" text="Titre">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="velo.jnlp">
+  <information>
+    <title>velo</title>
+    <vendor>nahawnd</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\activation-1.1.jar" size="62983" download="eager" />
+    <jar href="lib\commons-codec-1.11.jar" size="335042" download="eager" />
+    <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="lib\commons-lang3-3.8.1.jar" size="501879" download="eager" />
+    <jar href="lib\controlsfx-11.0.0.jar" size="932275" download="eager" />
+    <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
+    <jar href="lib\ical4j-3.0.10.jar" size="1312967" download="eager" />
+    <jar href="lib\ikonli-core-11.3.4.jar" size="10565" download="eager" />
+    <jar href="lib\ikonli-fontawesome-pack-11.3.4.jar" size="159157" download="eager" />
+    <jar href="lib\ikonli-javafx-11.3.4.jar" size="36865" download="eager" />
+    <jar href="lib\javafx-base-13.0.1.jar" size="302" download="eager" />
+    <jar href="lib\javafx-controls-13.0.1.jar" size="306" download="eager" />
+    <jar href="lib\javafx-graphics-13.0.1.jar" size="306" download="eager" />
+    <jar href="lib\javax.mail-1.6.2.jar" size="659031" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\slf4j-api-1.7.25.jar" size="41203" download="eager" />
+    <jar href="lib\view-11.8.3.jar" size="767004" download="eager" />
+    <jar href="velo.jar" size="45958" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="velo" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="velo.Velo"  name="velo" />
+  <update check="always"/>
+</jnlp>

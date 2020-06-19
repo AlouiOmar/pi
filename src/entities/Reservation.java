@@ -28,7 +28,10 @@ public class Reservation {
     }
 
     public Reservation(String text, java.sql.Date valueOf, java.sql.Date valueOf0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.id = id;
+        this.titre = titre;
+        this.dateDeb = dateDeb;
+        this.dateFin = dateFin;
     }
 
     public int getId() {

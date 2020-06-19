@@ -14,36 +14,36 @@
    <children>
       <AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="710.0">
          <children>
-            <Button fx:id="rent" layoutX="413.0" layoutY="318.0" mnemonicParsing="false" onAction="#reserver" opacity="0.5" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #008080;" text="Rent" textFill="WHITE">
+            <Button fx:id="rent" layoutX="413.0" layoutY="318.0" mnemonicParsing="false" onAction="#update" opacity="0.5" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #008080;" text="Modifier" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
             <AnchorPane opacity="0.5" prefHeight="80.0" prefWidth="700.0" style="-fx-background-color: #008080;" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label fx:id="labelProductDisplay" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="23.0" prefHeight="34.0" prefWidth="175.0" text="Product  " textAlignment="CENTER" textFill="#ee941a">
+                  <Label fx:id="labelProductDisplay" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="23.0" prefHeight="44.0" prefWidth="332.0" text="Affichage Location" textAlignment="CENTER" textFill="#ee941a">
                      <font>
                         <Font name="Cambria Italic" size="36.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="back" layoutX="527.0" layoutY="319.0" mnemonicParsing="false" onAction="#rent_list" opacity="0.5" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: #008080;" text="Back " textFill="WHITE">
+            <Button fx:id="back" layoutX="527.0" layoutY="319.0" mnemonicParsing="false" onAction="#supp" opacity="0.5" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: #008080;" text="Supprimer" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label layoutX="16.0" layoutY="136.0" text="Title">
+            <Label layoutX="16.0" layoutY="136.0" text="Titre">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="182.0" text="Place">
+            <Label layoutX="16.0" layoutY="182.0" text="Lieu">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="228.0" text="Price">
+            <Label layoutX="16.0" layoutY="228.0" text="Prix">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

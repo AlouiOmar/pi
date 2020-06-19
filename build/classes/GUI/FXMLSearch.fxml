@@ -7,18 +7,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="velo.FXMLSearchController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="velo.FXMLSearchController">
    <children>
       <Pane layoutX="19.0" layoutY="19.0" prefHeight="352.0" prefWidth="551.0">
          <children>
-            <Label layoutX="50.0" layoutY="152.0" text="Rent name ">
+            <Label layoutX="50.0" layoutY="152.0" text="Location titre">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="name_rech" layoutX="222.0" layoutY="144.0" prefHeight="35.0" prefWidth="228.0" />
-            <Button fx:id="submit" layoutX="380.0" layoutY="290.0" mnemonicParsing="false" onAction="#rechercher" opacity="0.5" style="-fx-background-color: #008080;" text="Submit" textFill="WHITE">
+            <Button fx:id="submit" layoutX="380.0" layoutY="290.0" mnemonicParsing="false" onAction="#rechercher" opacity="0.5" style="-fx-background-color: #008080;" text="Rechercher" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -27,7 +26,7 @@
       </Pane>
       <AnchorPane opacity="0.5" prefHeight="103.0" prefWidth="601.0" style="-fx-background-color: #008080;">
          <children>
-            <Label layoutX="217.0" layoutY="44.0" prefHeight="27.0" prefWidth="207.0" text="Search page  " textFill="#ee941a">
+            <Label layoutX="217.0" layoutY="44.0" prefHeight="27.0" prefWidth="207.0" text="Recherche" textFill="#ee941a">
                <font>
                   <Font name="Cambria" size="24.0" />
                </font>

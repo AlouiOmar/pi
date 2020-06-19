@@ -14,30 +14,30 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="610.0">
          <children>
-            <Button fx:id="submit" layoutX="233.0" layoutY="414.0" mnemonicParsing="false" onAction="#add_location" opacity="0.5" style="-fx-background-color: #008080;" text="Submit " textFill="WHITE">
+            <Button fx:id="submit" layoutX="233.0" layoutY="414.0" mnemonicParsing="false" onAction="#add_location" opacity="0.5" style="-fx-background-color: #008080;" text="Valider" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button fx:id="annuler" layoutX="325.0" layoutY="414.0" mnemonicParsing="false" onAction="#home" opacity="0.5" style="-fx-background-color: #008080;" text="Cancel" textFill="WHITE">
+            <Button fx:id="annuler" layoutX="325.0" layoutY="414.0" mnemonicParsing="false" onAction="#annuler" opacity="0.5" style="-fx-background-color: #008080;" text="Annuler" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Label layoutX="20.0" layoutY="184.0" prefHeight="17.0" prefWidth="61.0" text="Place">
+            <Label layoutX="20.0" layoutY="184.0" prefHeight="17.0" prefWidth="61.0" text="Lieu">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font></Label>
-            <Label layoutX="21.0" layoutY="234.0" prefHeight="17.0" prefWidth="52.0" text="Price">
+            <Label layoutX="21.0" layoutY="234.0" prefHeight="17.0" prefWidth="52.0" text="Prix">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font></Label>
-            <Label fx:id="labelRentAdd" alignment="TOP_CENTER" layoutX="119.0" layoutY="11.0" prefHeight="17.0" prefWidth="227.0" text="Rent add" textFill="#ee941a">
+            <Label fx:id="labelRentAdd" alignment="TOP_CENTER" layoutX="119.0" layoutY="11.0" prefHeight="17.0" prefWidth="227.0" text="Ajout location" textFill="#ee941a">
                <font>
                   <Font name="Cambria Italic" size="27.0" />
                </font>
             </Label>
             <TextField fx:id="lieu" layoutX="83.0" layoutY="178.0" prefHeight="26.0" prefWidth="174.0" />
             <TextField fx:id="prix" layoutX="81.0" layoutY="231.0" prefHeight="26.0" prefWidth="174.0" />
-            <Label layoutX="21.0" layoutY="130.0" text="Title">
+            <Label layoutX="21.0" layoutY="130.0" text="Titre">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font></Label>
@@ -46,7 +46,7 @@
                   <Font name="System Italic" size="18.0" />
                </font></Label>
             <TextField fx:id="titre" layoutX="81.0" layoutY="126.0" prefHeight="25.0" prefWidth="174.0" />
-            <Button fx:id="photo" layoutX="83.0" layoutY="274.0" mnemonicParsing="false" onAction="#upload_photo" prefHeight="25.0" prefWidth="174.0" text="Upload" />
+            <Button fx:id="photo" layoutX="83.0" layoutY="274.0" mnemonicParsing="false" onAction="#upload_photo" prefHeight="25.0" prefWidth="174.0" text="telecharger_photo" />
             <AnchorPane opacity="0.5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #008080;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
